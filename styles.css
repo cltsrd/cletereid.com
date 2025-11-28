@@ -33,7 +33,7 @@ body {
 /* BASE */
 
 html {
-    font-size: clamp(14px, 1.5vw, 18px);
+    font-size: 18px;
     background-color: #000;
 }
 
@@ -63,8 +63,8 @@ h1 {
 }
 
 main {
-    padding: 6rem;
-    margin-top: 1.5rem;
+    padding: 4.5rem 5rem 5rem;
+    margin-top: 0.5rem;
 }
 
 main h1 {
@@ -86,7 +86,7 @@ footer {
 
 footer small {
     font-size: 0.9rem;
-    padding: 3rem;
+    padding: 2.25rem 3rem 2.25rem;
 }
 
 /* SHARED CARD BACKGROUNDS */
@@ -137,7 +137,7 @@ footer small {
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
 }
 
-/* PRIMARY CTA + SUBMIT */
+/* PRIMARY CTA AND SUBMIT BUTTON */
 
 .primary-cta,
 .modal-submit {
@@ -171,36 +171,48 @@ footer small {
     transform: translateY(1px);
 }
 
-/* HEADER & NAV */
+/* HEADER AND NAV WRAPPER */
 
 #site-header {
+    padding: 3rem clamp(2rem, 6vw, 5rem) 2rem;
+    color: #f4f2e8;
+}
+
+#header-cards {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(14rem, 1fr));
     gap: 2.5rem;
     align-items: stretch;
     justify-content: center;
-    padding: 3rem 5rem 2rem;
-    color: #f4f2e8;
 }
+
 
 #site-header h1 {
     margin-top: 0;
 }
 
+/* POLAROID CARD */
+
 #polaroid-card {
     background-color: transparent;
-    margin-left: 3rem;
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    padding: 0;
 }
 
 #polaroid-card img {
-    width: min(100%, 460px);
+    width: 94%;
+    max-width: 440px;
     height: auto;
-    transform: rotate(-7deg);
+    transform: rotate(-6deg);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.18));
     position: relative;
-    top: -14px;
-    left: -10px;
+    top: -10px;
+    left: -8px;
 }
+
+/* NAME CARD */
 
 #name-card {
     display: flex;
@@ -243,6 +255,8 @@ footer small {
     cursor: pointer;
 }
 
+/* LINKS CARD */
+
 #links-card {
     display: flex;
     flex-direction: column;
@@ -268,7 +282,7 @@ footer small {
     text-decoration: none;
 }
 
-/* Site nav */
+/* SITE NAV LINKS */
 
 .site-nav {
     display: flex;
@@ -299,7 +313,7 @@ footer small {
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
 }
 
-/* Nav toggle */
+/* NAV TOGGLE BUTTON */
 
 .nav-toggle {
     display: none;
@@ -539,7 +553,7 @@ footer small {
     margin-bottom: 1rem;
 }
 
-/* Portfolio alert */
+/* PORTFOLIO ALERT */
 
 .portfolio-alert {
     display: block;
@@ -594,7 +608,7 @@ footer small {
     margin: 0;
 }
 
-/* Project layout */
+/* PORTFOLIO PROJECT GRID */
 
 .portfolio-grid {
     display: flex;
@@ -859,28 +873,137 @@ footer small {
     margin-top: 0.5rem;
 }
 
-/*MEDIA: between 961 
-
-/* MEDIA: desktop only START */
+/* MEDIA: DESKTOP ONLY (MIN 961PX) */
 
 @media (min-width: 961px) {
     #name-card,
     #polaroid-card,
     #links-card {
-        min-width: 20rem;
+        aspect-ratio: 1 / 1;
+    }
+
+    #name-link {
+        height: 100%;
+    }
+
+    #polaroid-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     #polaroid-card img {
-        width: 100%;
+        width: 94%;
+        max-width: 440px;
         height: auto;
-        display: block;
+        transform: rotate(-6deg);
+    }
+
+    #links-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
 
+/* 1200px–1450px desktop tuning */
+@media (min-width: 1200px) and (max-width: 1450px) {
+    #header-cards {
+        gap: 2rem;
+    }
+
+    #name-card,
+    #polaroid-card,
+    #links-card {
+        aspect-ratio: 1 / 1;
+    }
+
+    #links-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .site-nav a {
+        font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+        letter-spacing: 0.06em;
+        padding: 0.25rem 0.5rem;
+    }
+
+    #polaroid-card img {
+        width: clamp(260px, 24vw, 380px);
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+/* MEDIA: DESKTOP MID-RANGE (961PX–1200PX) */
+
+@media (min-width: 961px) and (max-width: 1200px) {
+    #header-cards {
+        grid-template-columns: repeat(3, minmax(14rem, 1fr));
+        gap: 2.25rem;
+        align-items: stretch;
+    }
+
+    #name-card,
+    #polaroid-card,
+    #links-card {
+        aspect-ratio: 1 / 1;
+        height: auto;      /* let aspect-ratio control the height */
+    }
+
+    #name-link {
+        height: 100%;
+    }
+
+    #links-card {
+        justify-content: center;
+        padding: 1.6rem 1.4rem;
+        gap: 1.2rem;
+    }
+
+    .site-nav {
+        gap: 0.4rem;
+    }
+
+    .site-nav a {
+        padding: 0.2rem 0.5rem;
+        font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    }
+
+    #polaroid-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #polaroid-card img {
+        width: 94%;
+        max-width: 94%;
+        height: auto;
+    }
+}
+
+/* MEDIA: UP TO 960PX */
+
 @media (max-width: 960px) {
     #site-header {
-        grid-template-columns: 1fr;
         padding: 2.5rem 2.25rem 1.75rem;
+    }
+
+    #header-cards {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    #name-card,
+    #polaroid-card,
+    #links-card {
+        aspect-ratio: auto;
+    }
+
+    main {
+        padding: 2.5rem 2.5rem 3.5rem;
+        margin-top: 0.35rem;
     }
 
     #polaroid-card {
@@ -943,11 +1066,88 @@ footer small {
     }
 }
 
-/* MEDIA: up to 960px END */
-
-/* MEDIA: 801px–960px START */
+/* MEDIA: 801PX–960PX */
 
 @media (min-width: 801px) and (max-width: 960px) {
+    /* Header layout */
+    #site-header {
+        padding: 2.5rem 2.5rem 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    #header-cards {
+        width: 100%;
+        max-width: var(--content-max);
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "name links"
+            "polaroid polaroid";
+        gap: 2rem 2.25rem;
+        align-items: stretch;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    #name-card {
+        grid-area: name;
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    #links-card {
+        grid-area: links;
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1.8rem 1.6rem;
+        gap: 1.5rem;
+        margin-top: 0;
+    }
+
+    #name-link {
+        height: 100%;
+    }
+
+    .site-nav {
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    .site-nav a {
+        font-size: clamp(1.2rem, 1.9vw, 1.6rem);
+        padding: 0.25rem 0.6rem;
+    }
+
+    #polaroid-card {
+        grid-area: polaroid;
+        max-width: 42rem;
+        margin: 1.5rem auto 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #polaroid-card img {
+        width: 80%;
+        max-width: 440px;
+        height: auto;
+        transform: rotate(-6deg);
+    }
+
     body,
     main p,
     .pricing-intro p,
@@ -994,11 +1194,14 @@ footer small {
     footer small {
         font-size: clamp(1rem, 2vw, 1.3rem);
     }
+
+    .project-live-preview iframe,
+    .live-iframe iframe {
+        height: 650px;
+}
 }
 
-/* MEDIA: 801px–960px END */
-
-/* MEDIA: up to 800px START */
+/* MEDIA: UP TO 800PX */
 
 @media (max-width: 800px) {
     html {
@@ -1006,9 +1209,12 @@ footer small {
     }
 
     #site-header {
-        grid-template-columns: 1fr;
         padding: 0;
         margin: 0;
+    }
+
+    #header-cards {
+        grid-template-columns: 1fr;
         gap: 0.75rem;
     }
 
@@ -1106,7 +1312,8 @@ footer small {
     #polaroid-card {
         max-width: 42rem;
         margin: 0 auto;
-        overflow: hidden;
+        overflow: visible;
+        padding: 0 0 1rem 0.5rem; /* allow rotated image to breathe */
     }
 
     #polaroid-card img {
@@ -1131,7 +1338,7 @@ footer small {
         margin-bottom: 2.5rem;
     }
 
-  .handcoded-cta {
+    .handcoded-cta {
         margin-top: 1.75rem;
         gap: 1.75rem;
         max-width: 34rem;
@@ -1190,10 +1397,9 @@ footer small {
         min-height: 3.75rem;
     }
 
-    
     .pricing-note {
         text-align: center;
-    }   
+    }
 
     .pricing-note .primary-cta {
         margin-top: 1.5rem auto 0;
@@ -1204,7 +1410,6 @@ footer small {
         font-size: 1.05rem;
         padding: 0.7rem 1.6rem;
     }
-
 
     .live-iframe {
         width: 100%;
@@ -1267,7 +1472,6 @@ footer small {
         margin-right: auto;
     }
 
-    /* Slightly more vertical breathing room between stacked cards */
     .pricing-grid,
     .handcoded-benefits,
     .portfolio-project {
@@ -1275,9 +1479,7 @@ footer small {
     }
 }
 
-/* MEDIA: up to 800px END */
-
-/* MEDIA: up to 600px START */
+/* MEDIA: UP TO 600PX */
 
 @media (max-width: 600px) {
     #pricing-main,
@@ -1307,9 +1509,7 @@ footer small {
     }
 }
 
-/* MEDIA: up to 600px END */
-
-/* MEDIA: 601px–800px (modal focus) START */
+/* MEDIA: 601PX–800PX (MODAL FOCUS) */
 
 @media (min-width: 601px) and (max-width: 800px) {
     #contact-dialog {
@@ -1339,7 +1539,3 @@ footer small {
         padding: 1.1rem 2.5rem;
     }
 }
-
-/* MEDIA: 601px–800px (modal focus) END */
-
-/* TEST 12:47 */
