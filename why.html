@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>Why Hand-Coded?</title>
+        <meta charset="utf-8">
+        <meta name="author" content="https://cletereid.com">
+        <meta name="description" content="Why a hand-coded website is a better long-term choice than site builders like Wix, Squarespace, or Shopify.">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta property="og:title" content="Why Hand-Coded Websites — Clete Reid">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://cletereid.com/why.html">
+        <meta property="og:image" content="images/og_image.webp">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="stylesheet" href="https://use.typekit.net/qij6pyr.css">
+        <link href="styles.css" rel="stylesheet" media="screen">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header id="site-header">
+            <section id="name-card" class="square-card">
+                <a href="index.html" id="name-link">
+                    <h1>CLETE REID</h1>
+                    <h2>Freelance Web Developer</h2>
+                </a>
+            </section>
+            <div id="polaroid-card">
+                <img src="images/polaroid.png" alt="Polaroid of Clete Reid">
+            </div>
+            <section id="links-card" class="square-card">
+                <div id="links-top">
+                    <a href="#" id="contact-link" class="primary-cta">Contact Me</a>
+                    <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+                        <span class="nav-toggle-bar"></span>
+                        <span class="nav-toggle-bar"></span>
+                        <span class="nav-toggle-bar"></span>
+                    </button>
+                </div>
+                <nav id="site-nav" class="site-nav">
+                    <a href="pricing.html">Pricing</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="why.html">Why Hand-Coded?</a>
+                </nav>
+            </section>
+        </header>
+        <main id="handcoded-main">
+            <header class="handcoded-intro">
+                <h1>Why Choose a Hand-Coded Website Instead of a Site Builder?</h1>
+                <p>Site builders like Wix, Squarespace and Shopify make it easy to get something online quickly—but “easy” often comes with tradeoffs in performance, flexibility, and long-term quality. A hand-coded website is built specifically for your business, with clean HTML, purposeful design decisions, and no extra bloat hiding under the hood.</p>
+            </header>
+            <section class="handcoded-benefits" aria-label="Benefits of hand-coded websites">
+                <article class="benefit-card square-card benefit-card--starter">
+                    <h2>Blazing Fast Performance</h2>
+                    <p>
+                        Site builders load a lot of code you never see—extra scripts, plugins, and layout engines that slow everything down.
+                        A hand-coded site is lean and focused, so it feels fast on real devices, especially on mobile connections.
+                    </p>
+                </article>
+                <article class="benefit-card square-card benefit-card--starter">
+                    <h2>Built for *Your* Business</h2>
+                    <p>Templates are designed to work “okay” for everyone. Hand-coded sites are designed to work beautifully for you—your content, your layout, your priorities, and your brand. Nothing is forced to fit into a pre-made box.</p>
+                </article>
+                <article class="benefit-card square-card benefit-card--starter">
+                    <h2>Better SEO Foundation</h2>
+                    <p>Clean, semantic HTML and intentional structure give search engines exactly what they need. No messy nested builders, no duplicated headings, and no surprise markup getting in the way of your ranking potential.</p>
+                </article>
+            </section>
+            <section class="handcoded-compare">
+                <h2>A Clear Difference</h2>
+                <div class="compare-grid" aria-label="Hand-coded vs site builders comparison">
+                    <div class="compare-block square-card compare-block--red">
+                        <h3>Hand-Coded Website</h3>
+                        <ul>
+                            <li>Fast, clean, semantic HTML</li>
+                            <li>Fully custom design and layout</li>
+                            <li>No recurring builder platform fees</li>
+                            <li>Better control over SEO and structure</li>
+                            <li>Optimized assets and performance</li>
+                            <li>Built to be extended and refined over time</li>
+                        </ul>
+                    </div>
+                    <div class="compare-block square-card compare-block--white">
+                        <h3>Site Builder</h3>
+                        <ul>
+                            <li>Heavy, bloated code behind the scenes</li>
+                            <li>Template constraints and look-alike designs</li>
+                            <li>Ongoing subscription just to stay online</li>
+                            <li>Less control over markup and metadata</li>
+                            <li>Extra scripts that slow pages down</li>
+                            <li>Harder to move if the platform changes</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="handcoded-cta">
+                <p>If you'd like a site that feels fast, looks intentional, and is built specifically for your business instead of a template, we can talk through what that would look like for your project.</p>
+                <button class="primary-cta" id="contact-from-handcoded">Contact Me</button>
+            </section>
+        </main>
+        <footer>
+            <small>©2025 Clete Reid</small>
+        </footer>
+        <!-- Contact Modal -->
+        <div id="contact-modal" class="modal-backdrop" aria-hidden="true">
+            <div id="contact-dialog" class="modal" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+                <button id="modal-close" class="modal-close" type="button" aria-label="Close contact form" data-close-modal>&times;</button>
+                <header id="modal-header" class="modal-header">
+                    <h2 id="contact-title">Contact me, and I'll get back to you shortly.</h2>
+                </header>
+                <form class="modal-form" action="https://formsubmit.co/hello@cletereid.com" method="post">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button id="modal-submit" class="modal-submit" type="submit">Send Message</button>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://cletereid.com/thanks.html">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,1345 @@
+/* RESET */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* BASE */
+
+html {
+    font-size: clamp(14px, 1.5vw, 18px);
+    background-color: #000;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url("images/white_body_background.webp");
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: auto;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+header,
+h1 {
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+main {
+    padding: 6rem;
+    margin-top: 1.5rem;
+}
+
+main h1 {
+    font-size: clamp(1.2rem, 3vw, 2.33rem);
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+}
+
+main p {
+    font-size: clamp(1rem, 1.3vw, 1.25rem);
+    line-height: 1.6;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer small {
+    font-size: 0.9rem;
+    padding: 3rem;
+}
+
+/* SHARED CARD BACKGROUNDS */
+
+.pricing-card--starter,
+.benefit-card--starter,
+.compare-block--white,
+.project-card--white,
+.thankyou-card,
+#contact-dialog {
+    background-image: url("images/white_background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#links-card,
+.pricing-card--premium {
+    background-image: url("images/black_background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#name-card,
+.primary-cta,
+.pricing-card--business,
+.compare-block--red,
+.modal-submit {
+    background-image: url("images/red_background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* SHARED CARD ELEVATION */
+
+#name-card,
+#links-card,
+.square-card,
+.pricing-card,
+.benefit-card,
+.compare-block,
+.project-card,
+.portfolio-alert,
+.thankyou-card,
+#contact-dialog {
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
+}
+
+/* PRIMARY CTA + SUBMIT */
+
+.primary-cta,
+.modal-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.9rem;
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    line-height: 1.1;
+    color: #f4f2e8;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.primary-cta:hover,
+.modal-submit:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6);
+    transform: translateY(-1px);
+}
+
+.primary-cta:active,
+.modal-submit:active {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+    transform: translateY(1px);
+}
+
+/* HEADER & NAV */
+
+#site-header {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+    align-items: stretch;
+    justify-content: center;
+    padding: 3rem 5rem 2rem;
+    color: #f4f2e8;
+}
+
+#site-header h1 {
+    margin-top: 0;
+}
+
+#polaroid-card {
+    background-color: transparent;
+    margin-left: 3rem;
+}
+
+#polaroid-card img {
+    width: min(100%, 460px);
+    height: auto;
+    transform: rotate(-7deg);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.18));
+    position: relative;
+    top: -14px;
+    left: -10px;
+}
+
+#name-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+#name-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.55);
+}
+
+#name-card:active {
+    transform: translateY(1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+#name-card h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    letter-spacing: 0.08em;
+}
+
+#name-card h2 {
+    font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+    letter-spacing: 0.04em;
+}
+
+#name-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#links-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+#links-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 0.75rem;
+}
+
+#links-card a {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+}
+
+/* Site nav */
+
+.site-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    width: 100%;
+    align-items: center;
+}
+
+.site-nav a {
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    position: relative;
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+    transition: transform 0.16s ease, text-shadow 0.16s ease;
+}
+
+.site-nav a:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 6px 12px rgba(0, 0, 0, 0.45);
+}
+
+.site-nav a:active,
+#links-card a:active {
+    transform: translateY(1px);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* Nav toggle */
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    padding: 0.75rem;
+    cursor: pointer;
+    align-self: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-toggle-bar {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: #f4f2e8;
+    border-radius: 999px;
+    transform-origin: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle.is-active .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-active .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.is-active .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* PRICING PAGE */
+
+#pricing-main {
+    padding: 4rem 6rem 5rem;
+    color: #111;
+}
+
+.pricing-intro {
+    margin-bottom: 3rem;
+}
+
+.pricing-intro h1 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.pricing-intro p,
+.pricing-note p {
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    line-height: 1.7;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.pricing-card {
+    padding: 2.25rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.pricing-card--business,
+.pricing-card--premium {
+    color: #f4f2e8;
+}
+
+.pricing-card h2 {
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.pricing-range {
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.1rem, 1.7vw, 1.4rem);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.pricing-tagline {
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    line-height: 1.5;
+    opacity: 0.95;
+}
+
+.pricing-card ul {
+    margin-top: 0.75rem;
+    padding-left: 1.1rem;
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.5;
+}
+
+.pricing-card li + li {
+    margin-top: 0.3rem;
+}
+
+.pricing-note {
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.6;
+}
+
+.pricing-note p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* WHY HAND-CODED PAGE */
+
+#handcoded-main {
+    padding: 4rem 6rem 5rem;
+    color: #111;
+}
+
+.handcoded-intro {
+    margin-bottom: 3rem;
+}
+
+.handcoded-intro h1 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.handcoded-intro p {
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.6;
+}
+
+.handcoded-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.benefit-card {
+    padding: 2.25rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.benefit-card h2 {
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.benefit-card p {
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.6;
+}
+
+.handcoded-compare {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.handcoded-compare h2 {
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.compare-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+}
+
+.compare-block {
+    padding: 2.25rem 2rem 2rem;
+}
+
+.compare-block--red {
+    color: #f4f2e8;
+}
+
+.compare-block--white {
+    color: #111;
+}
+
+.handcoded-cta {
+    margin-top: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.handcoded-cta p {
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.6;
+}
+
+.handcoded-cta .primary-cta {
+    align-self: flex-start;
+    margin-top: 0.25rem;
+}
+
+/* PORTFOLIO PAGE */
+
+#portfolio-main {
+    padding: 4rem 6rem 5rem;
+    color: #111;
+}
+
+.portfolio-intro {
+    max-width: 46rem;
+    margin-bottom: 2.5rem;
+}
+
+.portfolio-intro h1 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+/* Portfolio alert */
+
+.portfolio-alert {
+    display: block;
+    background-color: rgba(244, 242, 232, 0.97);
+    border-left: 8px solid #830e0d;
+    padding: 2.25rem 2rem 2rem;
+    width: calc((100% - 2.5rem) / 2);
+    max-width: calc((100% - 2.5rem) / 2);
+    margin-bottom: 2.5rem;
+}
+
+.portfolio-alert-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.alert-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #f5d548;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+    flex-shrink: 0;
+}
+
+.alert-icon::before {
+    content: "!";
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #111;
+}
+
+.portfolio-alert-title {
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    margin: 0;
+}
+
+.portfolio-alert p {
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Project layout */
+
+.portfolio-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.portfolio-project {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.portfolio-project > .project-card {
+    height: auto;
+}
+
+.portfolio-project > .project-card:first-child {
+    padding-bottom: 1.5rem;
+}
+
+.portfolio-project > .project-card:last-child {
+    height: 100%;
+}
+
+.project-card {
+    padding: 2rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.project-card--white {
+    color: #111;
+}
+
+.project-card-header h2 {
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.project-meta {
+    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    opacity: 0.9;
+    margin-top: 0.4rem;
+}
+
+.project-summary {
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.6;
+}
+
+.project-details {
+    margin-top: 0.5rem;
+    padding-left: 1.1rem;
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.5;
+}
+
+.project-details li + li {
+    margin-top: 0.3rem;
+}
+
+.project-live-preview {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 1.75rem 0;
+}
+
+.project-live-preview iframe {
+    flex: 1 1 auto;
+    width: 100%;
+    border: none;
+    display: block;
+}
+
+.project-live-link {
+    margin: 1.25rem auto 0;
+    margin-top: 1rem;
+    display: inline-block;
+    align-self: center;
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.15rem;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.16s ease, text-shadow 0.16s ease;
+}
+
+.project-live-link:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 6px 12px rgba(0, 0, 0, 0.45);
+}
+
+.project-live-link:active {
+    transform: translateY(1px);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+}
+
+.live-iframe {
+    width: 100%;
+    border: none;
+    display: block;
+}
+
+/* MODAL */
+
+#contact-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    z-index: 1000;
+}
+
+#contact-modal.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#contact-dialog {
+    width: min(36rem, 100%);
+    border-radius: 0;
+    color: #111;
+    position: relative;
+    padding: 2.5rem 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: none;
+    background: transparent;
+    color: #111;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    opacity: 0.7;
+}
+
+#modal-close:hover {
+    opacity: 1;
+}
+
+#modal-header {
+    display: block;
+    padding: 0 0 1.25rem 0;
+    margin: 0;
+    text-align: left;
+}
+
+#modal-header h2 {
+    letter-spacing: 0.02em;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.field label {
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.field input,
+.field textarea {
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    padding: 0.75rem 0.9rem;
+    border-radius: 0;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    background-color: rgba(244, 242, 232, 0.9);
+    outline: none;
+    resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: #830e0d;
+    box-shadow: 0 0 0 3px rgba(131, 14, 13, 0.28);
+}
+
+.modal-submit {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.85rem 2rem;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    color: #f4f2e8;
+}
+
+/* THANK YOU PAGE */
+
+#thankyou-main {
+    min-height: calc(100vh - 6rem);
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thankyou-card {
+    max-width: 34rem;
+    width: 100%;
+    padding: 2.75rem 2.5rem 2.5rem;
+    text-align: center;
+}
+
+.thankyou-card h1 {
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    margin-bottom: 1rem;
+}
+
+.thankyou-card p {
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.thankyou-back {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+/*MEDIA: between 961 
+
+/* MEDIA: desktop only START */
+
+@media (min-width: 961px) {
+    #name-card,
+    #polaroid-card,
+    #links-card {
+        min-width: 20rem;
+    }
+
+    #polaroid-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 960px) {
+    #site-header {
+        grid-template-columns: 1fr;
+        padding: 2.5rem 2.25rem 1.75rem;
+    }
+
+    #polaroid-card {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    #pricing-main,
+    #handcoded-main,
+    #portfolio-main {
+        padding: 3rem 2.25rem 4rem;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .handcoded-benefits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .compare-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-project {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-alert {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #name-card {
+        padding: 3.25rem 2.5rem 3rem;
+    }
+
+    #links-card {
+        margin-top: 2.5rem;
+    }
+
+    #name-card h1 {
+        font-size: clamp(2.2rem, 6vw, 3.4rem);
+    }
+
+    #name-card h2 {
+        font-size: clamp(1.2rem, 3.3vw, 2rem);
+    }
+
+    #links-card a {
+        font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+    }
+
+    .primary-cta {
+        padding: 1rem 2.1rem;
+        font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+    }
+}
+
+/* MEDIA: up to 960px END */
+
+/* MEDIA: 801px–960px START */
+
+@media (min-width: 801px) and (max-width: 960px) {
+    body,
+    main p,
+    .pricing-intro p,
+    .pricing-card p,
+    .pricing-card ul,
+    .pricing-card li,
+    .pricing-note p,
+    .handcoded-intro p,
+    .handcoded-benefits p,
+    .compare-block li,
+    .handcoded-cta p,
+    .portfolio-intro p,
+    .portfolio-alert p,
+    .project-summary,
+    .project-details li {
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        line-height: 1.65;
+    }
+
+    main h1,
+    .pricing-intro h1,
+    .handcoded-intro h1,
+    .portfolio-intro h1 {
+        font-size: clamp(2rem, 4.6vw, 3rem);
+        line-height: 1.25;
+    }
+
+    .pricing-card h2,
+    .benefit-card h2,
+    .compare-block h3,
+    .project-card-header h2 {
+        font-size: clamp(1.35rem, 3vw, 1.9rem);
+        letter-spacing: 0.06em;
+    }
+
+    .portfolio-alert-title {
+        font-size: clamp(1.25rem, 3vw, 1.7rem);
+    }
+
+    .project-live-link {
+        font-size: clamp(1rem, 2.4vw, 1.4rem);
+    }
+
+    footer small {
+        font-size: clamp(1rem, 2vw, 1.3rem);
+    }
+}
+
+/* MEDIA: 801px–960px END */
+
+/* MEDIA: up to 800px START */
+
+@media (max-width: 800px) {
+    html {
+        font-size: 18px;
+    }
+
+    #site-header {
+        grid-template-columns: 1fr;
+        padding: 0;
+        margin: 0;
+        gap: 0.75rem;
+    }
+
+    #links-card,
+    #name-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0;
+        transform: none;
+        box-shadow: none;
+    }
+
+    #links-card {
+        order: -1;
+        background-image: url("images/black_background.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 2.5rem 1.5rem 2rem;
+        box-shadow: none;
+        align-items: stretch;
+        text-align: left;
+    }
+
+    #links-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    #links-card .primary-cta {
+        flex: 1 1 0;
+        max-width: calc(100% - 62px);
+        padding: 1.05rem 1.75rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        padding: 1.05rem 1.2rem;
+        margin-right: 0.25rem;
+        border: 1px solid rgba(244, 242, 232, 0.6);
+        background-color: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-toggle-bar {
+        width: 22px;
+        height: 3px;
+        border-radius: 0;
+        background-color: #f4f2e8;
+    }
+
+    .site-nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 1rem 0 0 1rem;
+        width: 100%;
+        padding-top: 0.85rem;
+        gap: 0.45rem;
+    }
+
+    .site-nav.is-open {
+        display: flex;
+    }
+
+    .site-nav a {
+        width: 100%;
+        text-align: left;
+        font-size: clamp(1.6rem, 5.8vw, 2rem);
+        padding: 0.75rem 0;
+        text-transform: uppercase;
+        letter-spacing: 0.085em;
+    }
+
+    #name-card {
+        padding: 2.75rem 1.75rem 2.5rem;
+    }
+
+    #name-card h1 {
+        font-size: clamp(2.4rem, 10vw, 3.4rem);
+        letter-spacing: 0.09em;
+    }
+
+    #name-card h2 {
+        font-size: clamp(1.25rem, 6vw, 1.8rem);
+        letter-spacing: 0.05em;
+    }
+
+    #polaroid-card {
+        max-width: 42rem;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    #polaroid-card img {
+        margin-top: 1.75rem;
+    }
+
+    main {
+        padding: 2.5rem 1.5rem 3rem;
+    }
+
+    #pricing-main {
+        padding: 2.5rem 1.5rem 3rem;
+    }
+
+    #handcoded-main {
+        padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .handcoded-benefits {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+  .handcoded-cta {
+        margin-top: 1.75rem;
+        gap: 1.75rem;
+        max-width: 34rem;
+    }
+
+    .handcoded-cta .primary-cta {
+        align-self: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    footer small {
+        font-size: 0.95rem;
+        padding: 2rem 1.25rem 2.25rem;
+    }
+
+    #contact-modal {
+        padding: 0.75rem;
+    }
+
+    #contact-dialog {
+        width: 88vw;
+        max-width: 420px;
+        padding: 2.25rem 0.8rem 1rem;
+        margin: auto;
+    }
+
+    #modal-header h2 {
+        position: relative;
+        top: 1.7rem;
+        font-size: 1.25rem;
+        line-height: 1.3;
+        margin: 0 0 0.85rem 0;
+    }
+
+    .modal-form {
+        gap: 0.85rem;
+    }
+
+    .field {
+        gap: 0.35rem;
+    }
+
+    .field label {
+        font-size: 1rem;
+        letter-spacing: 0.06em;
+    }
+
+    .field input,
+    .field textarea {
+        font-size: 1rem;
+        padding: 0.6rem 0.7rem;
+    }
+
+    .field textarea {
+        min-height: 3.75rem;
+    }
+
+    
+    .pricing-note {
+        text-align: center;
+    }   
+
+    .pricing-note .primary-cta {
+        margin-top: 1.5rem auto 0;
+    }
+
+    .modal-submit {
+        margin-top: 0.5rem;
+        font-size: 1.05rem;
+        padding: 0.7rem 1.6rem;
+    }
+
+
+    .live-iframe {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        aspect-ratio: 3 / 5;
+    }
+
+    main p,
+    .pricing-intro p,
+    .pricing-card p,
+    .pricing-card li,
+    .pricing-tagline,
+    .pricing-note,
+    .handcoded-intro p,
+    .benefit-card p,
+    .compare-block li,
+    .handcoded-cta p,
+    .portfolio-intro p,
+    .portfolio-alert p,
+    .project-summary,
+    .project-details li,
+    .project-meta,
+    .thankyou-card p,
+    .modal-form .field label,
+    .modal-form .field input,
+    .modal-form .field textarea {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    main h1,
+    .pricing-intro h1,
+    .handcoded-intro h1,
+    .portfolio-intro h1,
+    .thankyou-card h1 {
+        font-size: 2.2rem;
+        line-height: 1.25;
+    }
+
+    #links-card a,
+    .primary-cta,
+    .project-live-link,
+    .handcoded-cta .primary-cta {
+        font-size: 1.1rem;
+        letter-spacing: 0.08em;
+    }
+
+    .pricing-card,
+    .benefit-card,
+    .compare-block,
+    .project-card,
+    .thankyou-card,
+    .portfolio-alert {
+        padding: 1.8rem 1.4rem 1.7rem;
+        max-width: 34rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Slightly more vertical breathing room between stacked cards */
+    .pricing-grid,
+    .handcoded-benefits,
+    .portfolio-project {
+        row-gap: 2.25rem;
+    }
+}
+
+/* MEDIA: up to 800px END */
+
+/* MEDIA: up to 600px START */
+
+@media (max-width: 600px) {
+    #pricing-main,
+    #portfolio-main {
+        padding: 2.5rem 1.75rem 3.25rem;
+    }
+
+    #contact-modal {
+        padding: 1.25rem;
+    }
+
+    #contact-dialog {
+        padding: 2rem 1.75rem 1.75rem;
+    }
+
+    #site-header {
+        padding: 0;
+        margin: 0;
+    }
+
+    main {
+        padding: 2rem 1.25rem 2.75rem;
+    }
+
+    footer small {
+        padding: 2rem 1.25rem 2.25rem;
+    }
+}
+
+/* MEDIA: up to 600px END */
+
+/* MEDIA: 601px–800px (modal focus) START */
+
+@media (min-width: 601px) and (max-width: 800px) {
+    #contact-dialog {
+        width: 88vw;
+        max-width: 88vw;
+        padding: 2.25rem 1.85rem 2rem;
+        margin: 0 auto;
+    }
+
+    #modal-header h2 {
+        font-size: clamp(1.45rem, 4.4vw, 1.9rem);
+        line-height: 1.35;
+    }
+
+    .field label {
+        font-size: clamp(1.15rem, 4vw, 1.45rem);
+    }
+
+    .field input,
+    .field textarea {
+        font-size: clamp(1.1rem, 4vw, 1.35rem);
+        padding: 1rem 1.1rem;
+    }
+
+    .modal-submit {
+        font-size: clamp(1.2rem, 4.2vw, 1.45rem);
+        padding: 1.1rem 2.5rem;
+    }
+}
+
+/* MEDIA: 601px–800px (modal focus) END */
+
+/* TEST 9:00 */

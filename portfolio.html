@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>Portfolio — Clete Reid</title>
+        <meta charset="utf-8">
+        <meta name="author" content="https://cletereid.com">
+        <meta name="description" content="Selected work and in-progress projects by freelance web developer Clete Reid.">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta property="og:title" content="Portfolio — Clete Reid">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://cletereid.com/portfolio.html">
+        <meta property="og:image" content="images/og_image.webp">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="stylesheet" href="https://use.typekit.net/qij6pyr.css">
+        <link href="styles.css" rel="stylesheet" media="screen">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header id="site-header">
+            <section id="name-card" class="square-card">
+                <a href="index.html" id="name-link">
+                    <h1>CLETE REID</h1>
+                    <h2>Freelance Web Developer</h2>
+                </a>
+            </section>
+            <div id="polaroid-card">
+                <img src="images/polaroid.png" alt="Polaroid of Clete Reid">
+            </div>
+            <section id="links-card" class="square-card">
+                <div id="links-top">
+                    <a href="#" id="contact-link" class="primary-cta">Contact me</a>
+                    <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+                        <span class="nav-toggle-bar"></span>
+                        <span class="nav-toggle-bar"></span>
+                        <span class="nav-toggle-bar"></span>
+                    </button>
+                </div>
+                <nav id="site-nav" class="site-nav">
+                    <a href="pricing.html">Pricing</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="why.html">Why Hand-Coded?</a>
+                </nav>
+            </section>
+        </header>
+        <main id="portfolio-main">
+            <header class="portfolio-intro">
+                <h1>Portfolio & In-Progress Work</h1>
+            </header>
+            <section class="portfolio-alert" aria-label="Portfolio notice">
+                <div class="portfolio-alert-header">
+                    <span class="alert-icon" aria-hidden="true"></span>
+                    <h2 class="portfolio-alert-title">11/23/2025: Note on Featured Work</h2>
+                </div>
+                <p>Moving forward, I'm only curating newer projects and active builds to showcase here. More to come in the upcoming weeks.</p>
+            </section>
+            <section class="portfolio-grid" aria-label="Project gallery">
+                <article class="portfolio-project">
+                    <div class="project-card square-card project-card--white">
+                        <header class="project-card-header">
+                            <h2>Mama Debbie's Art Emporium</h2>
+                            <p class="project-meta">Custom small business site • Atlanta, GA</p>
+                        </header>
+                        <p class="project-summary">A hand-coded marketing site for a local art emporium, focused on clarity, warmth, and ease of use. The layout highlights key services, rental information, and contact details without the noise or bloat of a typical site builder template.</p>
+                        <ul class="project-details">
+                            <li>Fully responsive layout, built from scratch with semantic HTML and custom CSS</li>
+                            <li>Performance-focused: no unnecessary scripts, plugins, or page-builder overhead</li>
+                            <li>Custom visual system using paper textures, color, and simple typography</li>
+                            <li>Clear calls-to-action to view membership information and contact the business</li>
+                        </ul>
+                    </div>
+                    <div class="project-card square-card project-card--white project-live-preview">
+                        <iframe src="https://mdae.art" loading="lazy" title="Mama Debbie's Art Emporium Live Preview" class="live-iframe"></iframe>
+                        <a href="https://mdae.art" target="_blank" rel="noopener noreferrer" class="project-live-link">Visit Live Site ↗</a>
+                    </div>
+                </article>
+                <!-- Future projects: copy this <article class="portfolio-project"> -->
+            </section>
+        </main>
+        <footer>
+            <small>©2025 Clete Reid</small>
+        </footer>
+        <!-- Contact Modal -->
+        <div id="contact-modal" class="modal-backdrop" aria-hidden="true">
+            <div id="contact-dialog" class="modal" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+                <button id="modal-close" class="modal-close" type="button" aria-label="Close contact form" data-close-modal>&times;</button>
+                <header id="modal-header" class="modal-header">
+                    <h2 id="contact-title">Contact me, and I'll get back to you shortly.</h2>
+                </header>
+                <form class="modal-form" action="https://formsubmit.co/hello@cletereid.com" method="post">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button id="modal-submit" class="modal-submit" type="submit">Send Message</button>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://cletereid.com/thanks.html">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

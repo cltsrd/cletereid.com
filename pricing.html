@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<title>Pricing</title>
+		<meta charset="utf-8">
+		<meta name="author" content="https://cletereid.com">
+		<meta name="description" content="Freelance Web Developer in Atlanta, GA">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta property="og:title" content="Clete Reid">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://cletereid.com/pricing.html">
+		<meta property="og:image" content="images/og_image.webp">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="stylesheet" href="https://use.typekit.net/qij6pyr.css">
+        <link href="styles.css" rel="stylesheet" media="screen">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header id="site-header">
+            <section id="name-card" class="square-card">
+                <a href="index.html" id="name-link">
+                    <h1>CLETE REID</h1>
+                    <h2>Freelance Web Developer</h2>
+                </a>
+            </section>
+            <div id="polaroid-card">
+                <img src="images/polaroid.png" alt="Polaroid of Clete Reid">
+            </div>
+            <section id="links-card" class="square-card">
+                <div id="links-top">
+                    <a href="#" id="contact-link" class="primary-cta">Contact Me</a>
+                    <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+                        <span class="nav-toggle-bar"></span>
+                        <span class="nav-toggle-bar"></span>
+                        <span class="nav-toggle-bar"></span>
+                    </button>
+                </div>
+                <nav id="site-nav" class="site-nav">
+                    <a href="pricing.html">Pricing</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="why.html">Why Hand-Coded?</a>
+                </nav>
+            </section>
+        </header>
+        <main id="pricing-main">
+            <header class="pricing-intro">
+                <h1>Transparent pricing for custom, hand-coded websites.</h1>
+                <p>Every project is fully custom—no templates, no builders. These ranges reflect typical projects. After a short conversation about your goals, I’ll put together a tailored quote.</p>
+            </header>
+            <section class="pricing-grid" aria-label="Website pricing tiers">
+                <article class="pricing-card pricing-card--starter square-card">
+                    <h2>Starter Website</h2>
+                    <p class="pricing-range">$1,200</p>
+                    <p class="pricing-tagline">Perfect for individuals and small projects.</p>
+                    <ul>
+                        <li>1-2 fully custom pages</li>
+                        <li>Hand-coded, responsive layout</li>
+                        <li>Basic on-page SEO</li>
+                        <li>Contact form setup</li>
+                        <li>Launch support</li>
+                    </ul>
+                </article>
+                <article class="pricing-card pricing-card--business square-card">
+                    <h2>Small Business Site</h2>
+                    <p class="pricing-range">$1,800</p>
+                    <p class="pricing-tagline">For local businesses that need a real online home.</p>
+                    <ul>
+                        <li>3-6 custom pages</li>
+                        <li>Layout and typography tailored to your brand</li>
+                        <li>Mobile-first, fast-loading build</li>
+                        <li>Contact forms + basic integrations</li>
+                        <li>Content guidance and polish</li>
+                    </ul>
+                </article>
+                <article class="pricing-card pricing-card--premium square-card">
+                    <h2>Premium Build</h2>
+                    <p class="pricing-range">$4,500+</p>
+                    <p class="pricing-tagline">For bigger projects that need extra detail and depth.</p>
+                    <ul>
+                        <li>6-12+ pages or more complex structure</li>
+                        <li>Advanced layouts and micro-interactions</li>
+                        <li>Branding and visual support as needed</li>
+                        <li>Optional CMS integration</li>
+                        <li>Collaboration with your team or designer</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="pricing-note">
+                <p>Looking for something a little different? I also take on retainer work, smaller one-off fixes, and design/dev collaboration for agencies.</p>
+                <a href="#" id="contact-cta-bottom" class="primary-cta">Contact Me</a>
+            </section>
+        </main>
+        <footer>
+            <small>©2025 Clete Reid</small>
+        </footer>
+        <!-- Contact Modal -->
+        <div id="contact-modal" class="modal-backdrop" aria-hidden="true">
+            <div id="contact-dialog" class="modal" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+                <button id="modal-close" class="modal-close" type="button" aria-label="Close contact form" data-close-modal>&times;</button>
+                <header id="modal-header" class="modal-header">
+                    <h2 id="contact-title">Contact me, and I'll get back to you shortly.</h2>
+                </header>
+                <form class="modal-form" action="https://formsubmit.co/hello@cletereid.com" method="post">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button id="modal-submit" class="modal-submit" type="submit">Send Message</button>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://cletereid.com/thanks.html">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
