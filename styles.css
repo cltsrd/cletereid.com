@@ -353,7 +353,9 @@ footer small {
 
 /* PRICING PAGE */
 
-#pricing-main {
+#pricing-main,
+#handcoded-main,
+#portfolio-main {
     padding: 4rem 6rem 5rem;
     color: #111;
 }
@@ -362,7 +364,9 @@ footer small {
     margin-bottom: 3rem;
 }
 
-.pricing-intro h1 {
+.pricing-intro h1,
+.handcoded-intro h1,
+.portfolio-intro h1 {
     font-size: clamp(1.6rem, 3vw, 2.4rem);
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -427,31 +431,26 @@ footer small {
 }
 
 .pricing-note {
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    margin-top: 1.4rem;
+    padding-top: 0.85rem;
 }
 
 .pricing-note p {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    text-align: left;
+    margin: 0;
+}
+
+.pricing-note .primary-cta {
+    margin: 0;
+    align-self: flex-start;
 }
 
 /* WHY HAND-CODED PAGE */
 
-#handcoded-main {
-    padding: 4rem 6rem 5rem;
-    color: #111;
-}
-
 .handcoded-intro {
     margin-bottom: 3rem;
-}
-
-.handcoded-intro h1 {
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    line-height: 1.2;
-    margin-bottom: 1rem;
 }
 
 .handcoded-intro p {
@@ -519,38 +518,27 @@ footer small {
 }
 
 .handcoded-cta {
-    margin-top: 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.4rem;
+    margin-top: 1.4rem;
 }
 
 .handcoded-cta p {
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-    line-height: 1.6;
+    margin: 0;
 }
 
 .handcoded-cta .primary-cta {
-    align-self: flex-start;
-    margin-top: 0.25rem;
+    margin: 0;
+     align-self: flex-start;
 }
+
 
 /* PORTFOLIO PAGE */
-
-#portfolio-main {
-    padding: 4rem 6rem 5rem;
-    color: #111;
-}
 
 .portfolio-intro {
     max-width: 46rem;
     margin-bottom: 2.5rem;
-}
-
-.portfolio-intro h1 {
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    line-height: 1.2;
-    margin-bottom: 1rem;
 }
 
 /* PORTFOLIO ALERT */
@@ -1339,15 +1327,16 @@ footer small {
     }
 
     .handcoded-cta {
-        margin-top: 1.75rem;
-        gap: 1.75rem;
+        margin-top: 1.6rem;
+        gap: 1.5rem;
         max-width: 34rem;
+        align-items: center;
+        text-align: center;
     }
 
     .handcoded-cta .primary-cta {
         align-self: center;
-        margin-left: 0;
-        margin-right: 0;
+        margin: 0;
     }
 
     footer small {
@@ -1398,11 +1387,15 @@ footer small {
     }
 
     .pricing-note {
+        margin-top: 1.6rem;
+        gap: 1.5rem;
+        align-items: center;
         text-align: center;
     }
 
     .pricing-note .primary-cta {
-        margin-top: 1.5rem auto 0;
+        align-self: center;
+        margin: 0;
     }
 
     .modal-submit {
@@ -1483,6 +1476,7 @@ footer small {
 
 @media (max-width: 600px) {
     #pricing-main,
+    #handcoded-main,
     #portfolio-main {
         padding: 2.5rem 1.75rem 3.25rem;
     }

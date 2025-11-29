@@ -1,9 +1,7 @@
 const modalBackdrop = document.getElementById("contact-modal");
-const navToggle = document.getElementById("nav-toggle");
+const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.getElementById("site-nav");
-const contactLink = document.getElementById("contact-link");
-const contactCtaBottom = document.getElementById("contact-cta-bottom");
-const contactFromHandcoded = document.getElementById("contact-from-handcoded");
+const contactTriggers = document.querySelectorAll(".contact-trigger");
 const closeButtons = document.querySelectorAll("[data-close-modal]");
 
 function openModal(event) {
@@ -24,10 +22,8 @@ function closeModal() {
 }
 
 if (modalBackdrop) {
-    [contactLink, contactCtaBottom, contactFromHandcoded].forEach((el) => {
-        if (el) {
-            el.addEventListener("click", openModal);
-        }
+    contactTriggers.forEach((el) => {
+        el.addEventListener("click", openModal);
     });
 
     closeButtons.forEach((button) => {
