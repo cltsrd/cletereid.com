@@ -240,7 +240,7 @@ footer small {
 
 #name-card h2 {
     font-size: clamp(1.1rem, 2.2vw, 1.8rem);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
 }
 
 #name-link {
@@ -1287,14 +1287,14 @@ footer small {
         padding: 2.75rem 1.75rem 2.5rem;
     }
 
-    #name-card h1 {
-        font-size: clamp(2.4rem, 10vw, 3.4rem);
-        letter-spacing: 0.09em;
+   #name-card h1 {
+    font-size: clamp(2.4rem, 10vw, 3.4rem);
+    letter-spacing: 0.09em;
     }
 
     #name-card h2 {
-        font-size: clamp(1.25rem, 6vw, 1.8rem);
-        letter-spacing: 0.05em;
+    font-size: clamp(1.25rem, 6vw, 1.8rem);
+    letter-spacing: 0.09em;
     }
 
     #polaroid-card {
