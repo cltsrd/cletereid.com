@@ -79,6 +79,11 @@ main p {
     line-height: 1.6;
 }
 
+p {
+  letter-spacing: 0.02em;
+}
+
+
 footer {
     display: flex;
     flex-direction: column;
