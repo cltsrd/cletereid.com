@@ -81,12 +81,22 @@ main p {
 
 footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
 
 footer small {
     font-size: 0.9rem;
     padding: 2.25rem 3rem 2.25rem;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: underline;
+    padding-bottom: 2rem;
 }
 
 /* SHARED CARD BACKGROUNDS */
@@ -859,6 +869,10 @@ footer small {
 .thankyou-back {
     display: inline-block;
     margin-top: 0.5rem;
+}
+
+.delete-message {
+    text-decoration: underline;
 }
 
 /* MEDIA: DESKTOP ONLY (MIN 961PX) */
