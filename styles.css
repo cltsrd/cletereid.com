@@ -329,6 +329,10 @@ footer a {
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
 }
 
+.site-nav a.active {
+    color: #9a9689;
+}
+
 /* NAV TOGGLE BUTTON */
 
 .nav-toggle {
