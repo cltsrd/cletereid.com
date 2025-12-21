@@ -567,7 +567,7 @@ footer a {
     display: block;
     background-color: rgba(244, 242, 232, 0.97);
     border-left: 8px solid #830e0d;
-    padding: 2.25rem 2rem 2rem;
+    padding: 1.5rem 1.5rem 1.35rem;
     width: calc((100% - 2.5rem) / 2);
     max-width: calc((100% - 2.5rem) / 2);
     margin-bottom: 2.5rem;
@@ -576,16 +576,16 @@ footer a {
 .portfolio-alert-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
 }
 
 .alert-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     background-color: #f5d548;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
@@ -596,7 +596,7 @@ footer a {
     content: "!";
     font-family: "titular", sans-serif;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1;
     color: #111;
 }
@@ -604,15 +604,15 @@ footer a {
 .portfolio-alert-title {
     font-family: "titular", sans-serif;
     font-weight: 700;
-    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
     text-transform: uppercase;
     letter-spacing: 0.11em;
     margin: 0;
 }
 
 .portfolio-alert p {
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-    line-height: 1.6;
+    font-size: clamp(0.9rem, 1.1vw, 0.98rem);
+    line-height: 1.55;
     margin: 0;
 }
 
@@ -1488,6 +1488,34 @@ footer a {
         max-width: 34rem;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .portfolio-alert {
+        padding: 1.2rem 1.2rem 1.1rem;
+        border-left-width: 5px;
+    }
+
+    .portfolio-alert-header {
+        gap: 0.6rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .alert-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
+    .alert-icon::before {
+        font-size: 1rem;
+    }
+
+    .portfolio-alert-title {
+        font-size: 0.95rem;
+    }
+
+    .portfolio-alert p {
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 
     .pricing-grid,
