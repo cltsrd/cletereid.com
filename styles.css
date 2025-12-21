@@ -64,7 +64,7 @@ h1 {
 }
 
 main {
-    padding: 4.5rem 5rem 5rem;
+    padding: 4rem 5rem 2rem;
     margin-top: 0.5rem;
 }
 
@@ -75,9 +75,29 @@ main h1 {
     margin-bottom: 1.25rem;
 }
 
+main h2 {
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2.2vw, 1.8rem);
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+}
+
 main p {
     font-size: clamp(1rem, 1.3vw, 1.25rem);
     line-height: 1.6;
+    margin: 0 0 1.25rem 0;
+}
+
+main em {
+    font-style: italic;
+}
+
+main .primary-cta {
+    margin-top: 1.4rem;
+    display: inline-block;
 }
 
 p {
@@ -89,20 +109,23 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.25rem;
 }
 
 
 footer small {
-    font-size: 0.9rem;
-    padding: 2.25rem 3rem 2.25rem;
-    text-align: center;
+    font-size: 1.1rem;
+    padding: 1rem 5rem 0;
+    margin: 0;
+    text-align: left;
 }
 
 footer a {
+    font-size: 0.95rem;
     text-decoration: underline;
-    padding-bottom: 2rem;
+    padding: 0 0 1.5rem 5rem;
 }
 
 /* SHARED CARD BACKGROUNDS */
@@ -376,8 +399,8 @@ footer a {
 #pricing-main,
 #handcoded-main,
 #portfolio-main {
-    padding: 4rem 6rem 5rem;
-    color: #111;
+    padding: 4rem 5rem 2rem;
+    color: #2a2a2a;
 }
 
 .pricing-intro {
@@ -467,6 +490,24 @@ footer a {
     align-self: flex-start;
 }
 
+.home-cta {
+    margin-top: 1.4rem;
+    padding-top: 0.85rem;
+}
+
+.home-cta .primary-cta {
+    margin: 0;
+}
+
+.portfolio-cta {
+    margin-top: 1.4rem;
+    padding-top: 0.85rem;
+}
+
+.portfolio-cta .primary-cta {
+    margin: 0;
+}
+
 /* WHY HAND-CODED PAGE */
 
 .handcoded-intro {
@@ -534,7 +575,7 @@ footer a {
 }
 
 .compare-block--white {
-    color: #111;
+    color: #2a2a2a;
 }
 
 .handcoded-cta {
@@ -542,6 +583,7 @@ footer a {
     flex-direction: column;
     gap: 1.4rem;
     margin-top: 1.4rem;
+    padding-top: 0.85rem;
 }
 
 .handcoded-cta p {
@@ -598,7 +640,7 @@ footer a {
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1;
-    color: #111;
+    color: #2a2a2a;
 }
 
 .portfolio-alert-title {
@@ -652,7 +694,7 @@ footer a {
 }
 
 .project-card--white {
-    color: #111;
+    color: #2a2a2a;
 }
 
 .project-card-header h2 {
@@ -759,7 +801,7 @@ footer a {
 #contact-dialog {
     width: min(36rem, 100%);
     border-radius: 0;
-    color: #111;
+    color: #2a2a2a;
     position: relative;
     padding: 2.5rem 2.25rem 2rem;
     display: flex;
@@ -773,7 +815,7 @@ footer a {
     right: 1rem;
     border: none;
     background: transparent;
-    color: #111;
+    color: #2a2a2a;
     font-size: 2rem;
     cursor: pointer;
     padding: 0;
@@ -1029,7 +1071,7 @@ footer a {
     #pricing-main,
     #handcoded-main,
     #portfolio-main {
-        padding: 3rem 2.25rem 4rem;
+        padding: 3rem 2.25rem 2rem;
     }
 
     .pricing-grid {
@@ -1205,7 +1247,11 @@ footer a {
     }
 
     footer small {
-        font-size: clamp(1rem, 2vw, 1.3rem);
+        font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    }
+
+    footer a {
+        font-size: clamp(0.95rem, 1.8vw, 1.15rem);
     }
 
     .project-live-preview iframe,
@@ -1238,7 +1284,7 @@ footer a {
         margin: 0;
         border-radius: 0;
         transform: none;
-        box-shadow: none;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
     }
 
     #links-card {
@@ -1338,7 +1384,7 @@ footer a {
     }
 
     #pricing-main {
-        padding: 2.5rem 1.5rem 3rem;
+        padding: 2.5rem 1.5rem 2rem;
     }
 
     #handcoded-main {
@@ -1364,9 +1410,21 @@ footer a {
         margin: 0;
     }
 
+    footer {
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
     footer small {
-        font-size: 0.95rem;
-        padding: 2rem 1.25rem 2.25rem;
+        font-size: 1.05rem;
+        padding: 2rem 1.25rem 0;
+        text-align: center;
+    }
+
+    footer a {
+        font-size: 0.9rem;
+        padding: 0 0 2.25rem 0;
     }
 
     #contact-modal {
@@ -1421,6 +1479,12 @@ footer a {
     .pricing-note .primary-cta {
         align-self: center;
         margin: 0;
+    }
+
+    #home-main .primary-cta {
+        margin-left: auto;
+        margin-right: auto;
+        display: table;
     }
 
     .modal-submit {
@@ -1531,7 +1595,7 @@ footer a {
     #pricing-main,
     #handcoded-main,
     #portfolio-main {
-        padding: 2.5rem 1.75rem 3.25rem;
+        padding: 2.5rem 1.75rem 2rem;
     }
 
     #contact-modal {
@@ -1551,8 +1615,21 @@ footer a {
         padding: 2rem 1.25rem 2.75rem;
     }
 
+    footer {
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
     footer small {
-        padding: 2rem 1.25rem 2.25rem;
+        font-size: 1.05rem;
+        padding: 2rem 1.25rem 0;
+        text-align: center;
+    }
+
+    footer a {
+        font-size: 0.9rem;
+        padding: 0 0 2.25rem 0;
     }
 }
 
