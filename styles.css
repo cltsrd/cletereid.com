@@ -491,21 +491,27 @@ footer a {
 }
 
 .home-cta {
+    display: flex;
+    flex-direction: column;
     margin-top: 1.4rem;
     padding-top: 0.85rem;
 }
 
 .home-cta .primary-cta {
     margin: 0;
+    align-self: flex-start;
 }
 
 .portfolio-cta {
+    display: flex;
+    flex-direction: column;
     margin-top: 1.4rem;
     padding-top: 0.85rem;
 }
 
 .portfolio-cta .primary-cta {
     margin: 0;
+    align-self: flex-start;
 }
 
 /* WHY HAND-CODED PAGE */
@@ -1402,7 +1408,10 @@ footer a {
         gap: 1.5rem;
         max-width: 34rem;
         align-items: center;
-        text-align: center;
+    }
+
+    .handcoded-cta p {
+        text-align: left;
     }
 
     .handcoded-cta .primary-cta {
