@@ -137,8 +137,9 @@ footer small {
 footer a {
     font-size: 0.95rem;
     text-decoration: underline;
-    padding: 0 0 1.5rem 0;
+    padding: 0;
     margin-left: 5rem;
+    margin-bottom: 1.5rem;
     display: inline-block;
     width: fit-content;
 }
@@ -402,8 +403,10 @@ footer a {
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
 }
 
-.site-nav a.active {
-    color: #9a9689;
+#links-card .site-nav a.active {
+    color: #f4f2e8;
+    letter-spacing: 0.1em;
+    text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor, 0 0.5px 0 currentColor, 0 -0.5px 0 currentColor;
 }
 
 /* NAV TOGGLE BUTTON */
