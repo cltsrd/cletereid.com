@@ -1,4 +1,6 @@
-/* RESET */
+#contact-modal:not(.is-visible) {
+    display: none !important;
+}
 
 *,
 *::before,
@@ -31,8 +33,6 @@ body {
     padding: 0;
 }
 
-/* FOCUS STYLES */
-
 a:focus,
 button:focus,
 input:focus,
@@ -42,8 +42,6 @@ select:focus,
     outline: 2px solid #8B1A1A;
     outline-offset: 3px;
 }
-
-/* BASE */
 
 html {
     font-size: 18px;
@@ -116,7 +114,6 @@ p {
   letter-spacing: 0.02em;
 }
 
-
 footer {
     display: flex;
     flex-direction: column;
@@ -125,7 +122,6 @@ footer {
     text-align: left;
     gap: 0.25rem;
 }
-
 
 footer small {
     font-size: 1.1rem;
@@ -143,8 +139,6 @@ footer a {
     display: inline-block;
     width: fit-content;
 }
-
-/* SHARED CARD BACKGROUNDS */
 
 .pricing-card--starter,
 .benefit-card--starter,
@@ -177,8 +171,6 @@ footer a {
     background-position: center;
 }
 
-/* SHARED CARD ELEVATION */
-
 #name-card,
 #links-card,
 .square-card,
@@ -191,8 +183,6 @@ footer a {
 #contact-dialog {
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
 }
-
-/* PRIMARY CTA AND SUBMIT BUTTON */
 
 .primary-cta,
 .modal-submit {
@@ -226,8 +216,6 @@ footer a {
     transform: translateY(1px);
 }
 
-/* SKIP LINK */
-
 .skip-link {
     position: absolute;
     top: -100px;
@@ -247,8 +235,6 @@ footer a {
     outline-offset: 3px;
 }
 
-/* FORM VALIDATION AND LOADING STATES */
-
 .field input.invalid,
 .field textarea.invalid {
     border: 2px solid #8B1A1A;
@@ -260,8 +246,6 @@ footer a {
     cursor: not-allowed;
     pointer-events: none;
 }
-
-/* HEADER AND NAV WRAPPER */
 
 #site-header {
     padding: 3rem clamp(2rem, 6vw, 5rem) 2rem;
@@ -276,12 +260,9 @@ footer a {
     justify-content: center;
 }
 
-
 #site-header h1 {
     margin-top: 0;
 }
-
-/* POLAROID CARD */
 
 #polaroid-card {
     background-color: transparent;
@@ -301,8 +282,6 @@ footer a {
     top: -10px;
     left: -8px;
 }
-
-/* NAME CARD */
 
 #name-card {
     display: flex;
@@ -345,8 +324,6 @@ footer a {
     cursor: pointer;
 }
 
-/* LINKS CARD */
-
 #links-card {
     display: flex;
     flex-direction: column;
@@ -371,8 +348,6 @@ footer a {
     letter-spacing: 0.06em;
     text-decoration: none;
 }
-
-/* SITE NAV LINKS */
 
 .site-nav {
     display: flex;
@@ -409,8 +384,6 @@ footer a {
     text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor, 0 0.5px 0 currentColor, 0 -0.5px 0 currentColor;
 }
 
-/* NAV TOGGLE BUTTON */
-
 .nav-toggle {
     display: none;
     background: transparent;
@@ -446,8 +419,6 @@ footer a {
 .nav-toggle.is-active .nav-toggle-bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
-
-/* PRICING PAGE */
 
 #pricing-main,
 #handcoded-main,
@@ -567,8 +538,6 @@ footer a {
     align-self: flex-start;
 }
 
-/* WHY HAND-CODED PAGE */
-
 .handcoded-intro {
     margin-bottom: 3rem;
 }
@@ -654,15 +623,10 @@ footer a {
      align-self: flex-start;
 }
 
-
-/* PORTFOLIO PAGE */
-
 .portfolio-intro {
     max-width: 46rem;
     margin-bottom: 2.5rem;
 }
-
-/* PORTFOLIO ALERT */
 
 .portfolio-alert {
     display: block;
@@ -717,8 +681,6 @@ footer a {
     margin: 0;
 }
 
-/* PORTFOLIO PROJECT GRID */
-
 .portfolio-grid {
     display: flex;
     flex-direction: column;
@@ -730,7 +692,7 @@ footer a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.5rem;
     margin-bottom: 1.5rem;
-    align-items: start;
+    align-items: stretch;
 }
 
 .portfolio-project > .project-card {
@@ -750,6 +712,7 @@ footer a {
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
+    height: 100%;
 }
 
 .project-card--white {
@@ -788,23 +751,8 @@ footer a {
     margin-top: 0.3rem;
 }
 
-.project-live-preview {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 0 1.75rem 0;
-}
-
-.project-live-preview iframe {
-    flex: 1 1 auto;
-    width: 100%;
-    border: none;
-    display: block;
-}
-
 .project-live-link {
-    margin: 1.25rem auto 0;
-    margin-top: 1rem;
+    margin: 1.25rem auto 1rem;
     display: inline-block;
     align-self: center;
     font-family: "titular", sans-serif;
@@ -830,13 +778,34 @@ footer a {
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
 }
 
-.live-iframe {
+.project-live-preview {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 0 1.75rem 0;
+}
+
+.project-live-preview .live-iframe {
+    flex: 1 1 auto;
     width: 100%;
     border: none;
     display: block;
 }
 
-/* MODAL */
+@media (max-width: 960px) {
+    .project-live-preview {
+        padding: 0 0 1.25rem 0;
+    }
+
+    .project-live-preview .live-iframe {
+        flex: 0 0 auto;
+        aspect-ratio: 3 / 5;
+        height: auto;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+}
+
 
 #contact-modal {
     position: fixed;
@@ -855,6 +824,8 @@ footer a {
 #contact-modal.is-visible {
     opacity: 1;
     visibility: visible;
+
+    display: flex;
 }
 
 #contact-dialog {
@@ -961,8 +932,6 @@ footer a {
     color: #f4f2e8;
 }
 
-/* THANK YOU PAGE */
-
 #thankyou-main {
     min-height: calc(100vh - 6rem);
     padding: 4rem 2rem;
@@ -998,8 +967,6 @@ footer a {
     text-decoration: underline;
 }
 
-/* MEDIA: DESKTOP ONLY (MIN 961PX) */
-
 @media (min-width: 961px) {
     #name-card,
     #polaroid-card,
@@ -1031,7 +998,6 @@ footer a {
     }
 }
 
-/* 1200px–1450px desktop tuning */
 @media (min-width: 1200px) and (max-width: 1450px) {
     #header-cards {
         gap: 2rem;
@@ -1060,8 +1026,6 @@ footer a {
     }
 }
 
-/* MEDIA: DESKTOP MID-RANGE (961PX–1200PX) */
-
 @media (min-width: 961px) and (max-width: 1200px) {
     #header-cards {
         grid-template-columns: repeat(3, minmax(14rem, 1fr));
@@ -1073,7 +1037,7 @@ footer a {
     #polaroid-card,
     #links-card {
         aspect-ratio: 1 / 1;
-        height: auto;      /* let aspect-ratio control the height */
+        height: auto;
     }
 
     #name-link {
@@ -1107,8 +1071,6 @@ footer a {
         height: auto;
     }
 }
-
-/* MEDIA: UP TO 960PX */
 
 @media (max-width: 960px) {
     #site-header {
@@ -1191,10 +1153,8 @@ footer a {
     }
 }
 
-/* MEDIA: 801PX–960PX */
-
 @media (min-width: 801px) and (max-width: 960px) {
-    /* Header layout */
+
     #site-header {
         padding: 2.5rem 2.5rem 2rem;
         display: flex;
@@ -1285,8 +1245,10 @@ footer a {
     .compare-block li,
     .handcoded-cta p,
     .portfolio-intro p,
-    .portfolio-alert p,
-    .project-summary,
+    .portfolio-alert p {
+        align-items: stretch;
+    }
+
     .project-details li {
         font-size: clamp(1.1rem, 2vw, 1.35rem);
         line-height: 1.65;
@@ -1325,14 +1287,7 @@ footer a {
         display: inline-block;
         width: fit-content;
     }
-
-    .project-live-preview iframe,
-    .live-iframe iframe {
-        height: 650px;
-}
-}
-
-/* MEDIA: UP TO 800PX */
+    }
 
 @media (max-width: 800px) {
     html {
@@ -1444,7 +1399,7 @@ footer a {
         max-width: 42rem;
         margin: 0 auto;
         overflow: visible;
-        padding: 0 0 1rem 0.5rem; /* allow rotated image to breathe */
+        padding: 0 0 1rem 0.5rem;
     }
 
     #polaroid-card img {
@@ -1506,6 +1461,7 @@ footer a {
         padding: 0 0 2.25rem 0;
         display: inline-block;
         width: fit-content;
+        margin-left: 0;
     }
 
     #contact-modal {
@@ -1572,30 +1528,9 @@ footer a {
         margin-top: 0.5rem;
         font-size: 1.05rem;
         padding: 0.7rem 1.6rem;
+    
     }
 
-    .live-iframe {
-        width: 100%;
-        max-width: 420px;
-        margin: 0 auto;
-        border-radius: 0.75rem;
-        overflow: hidden;
-        aspect-ratio: 3 / 5;
-    }
-
-    main p,
-    .pricing-intro p,
-    .pricing-card p,
-    .pricing-card li,
-    .pricing-tagline,
-    .pricing-note,
-    .handcoded-intro p,
-    .benefit-card p,
-    .compare-block li,
-    .handcoded-cta p,
-    .portfolio-intro p,
-    .portfolio-alert p,
-    .project-summary,
     .project-details li,
     .project-meta,
     .thankyou-card p,
@@ -1670,8 +1605,6 @@ footer a {
     }
 }
 
-/* MEDIA: UP TO 600PX */
-
 @media (max-width: 600px) {
     #pricing-main,
     #handcoded-main,
@@ -1716,8 +1649,6 @@ footer a {
     }
 }
 
-/* MEDIA: 601PX–800PX (MODAL FOCUS) */
-
 @media (min-width: 601px) and (max-width: 800px) {
     #contact-dialog {
         width: 88vw;
@@ -1745,4 +1676,78 @@ footer a {
         font-size: clamp(1.2rem, 4.2vw, 1.45rem);
         padding: 1.1rem 2.5rem;
     }
+}
+
+#cms-main {
+    padding: 4rem 5rem 2rem;
+    color: #2a2a2a;
+}
+
+.cms-intro {
+    margin-bottom: 3rem;
+}
+
+.cms-intro h1 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.cms-intro p {
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    line-height: 1.7;
+    margin: 0.75rem 0 0;
+}
+
+.cms-kicker {
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin: 0 0 0.75rem;
+}
+
+.cms-caption {
+    margin: 0.85rem 0 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    opacity: 0.9;
+}
+
+.cms-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cms-image-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.cms-fine {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-top: 0.75rem;
+}
+
+@media (max-width: 960px) {
+    #cms-main {
+        padding: 2.75rem 1.75rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #cms-main {
+        padding: 2.25rem 1.25rem 1.75rem;
+    }
+}
+
+iframe {
+    border: none;
+    border-radius: 0;
 }
