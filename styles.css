@@ -1,5 +1,5 @@
 #contact-modal:not(.is-visible) {
-    display: none !important;
+    display: none;
 }
 
 *,
@@ -33,12 +33,12 @@ body {
     padding: 0;
 }
 
-a:focus,
-button:focus,
-input:focus,
-textarea:focus,
-select:focus,
-[tabindex]:not([tabindex="-1"]):focus {
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
     outline: 2px solid #8B1A1A;
     outline-offset: 3px;
 }
@@ -96,7 +96,7 @@ main h2 {
 }
 
 main p {
-    font-size: clamp(1rem, 1.3vw, 1.25rem);
+    font-size: clamp(1.125rem, 1.3vw, 1.25rem);
     line-height: 1.6;
     margin: 0 0 1.25rem 0;
 }
@@ -124,14 +124,14 @@ footer {
 }
 
 footer small {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
     padding: 1rem 0 0 0;
     margin: 0 5rem 0 5rem;
     text-align: left;
 }
 
 footer a {
-    font-size: 0.95rem;
+    font-size: clamp(1rem, 1.1vw, 1.05rem);
     text-decoration: underline;
     padding: 0;
     margin-left: 5rem;
@@ -380,8 +380,18 @@ footer a {
 
 #links-card .site-nav a.active {
     color: #f4f2e8;
-    letter-spacing: 0.1em;
-    text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor, 0 0.5px 0 currentColor, 0 -0.5px 0 currentColor;
+    padding-left: 0.75rem;
+}
+
+#links-card .site-nav a.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 1em;
+    background-color: #8B1A1A;
 }
 
 .nav-toggle {
@@ -441,7 +451,7 @@ footer a {
 
 .pricing-intro p,
 .pricing-note p {
-    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    font-size: clamp(1.125rem, 1.4vw, 1.25rem);
     line-height: 1.7;
 }
 
@@ -481,7 +491,7 @@ footer a {
 }
 
 .pricing-tagline {
-    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
     line-height: 1.5;
     opacity: 0.95;
 }
@@ -489,7 +499,7 @@ footer a {
 .pricing-card ul {
     margin-top: 0.75rem;
     padding-left: 1.1rem;
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
     line-height: 1.5;
 }
 
@@ -543,7 +553,7 @@ footer a {
 }
 
 .handcoded-intro p {
-    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    font-size: clamp(1.125rem, 1.3vw, 1.2rem);
     line-height: 1.6;
 }
 
@@ -570,7 +580,7 @@ footer a {
 }
 
 .benefit-card p {
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
     line-height: 1.6;
 }
 
@@ -596,6 +606,13 @@ footer a {
 
 .compare-block {
     padding: 2.25rem 2rem 2rem;
+}
+
+.compare-block p,
+.compare-block ul,
+.compare-block li {
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    line-height: 1.6;
 }
 
 .compare-block--red {
@@ -669,14 +686,14 @@ footer a {
 .portfolio-alert-title {
     font-family: "titular", sans-serif;
     font-weight: 700;
-    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
     text-transform: uppercase;
     letter-spacing: 0.11em;
     margin: 0;
 }
 
 .portfolio-alert p {
-    font-size: clamp(0.9rem, 1.1vw, 0.98rem);
+    font-size: clamp(1rem, 1.1vw, 1.05rem);
     line-height: 1.55;
     margin: 0;
 }
@@ -728,7 +745,7 @@ footer a {
 }
 
 .project-meta {
-    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
     text-transform: uppercase;
     letter-spacing: 0.10em;
     opacity: 0.9;
@@ -736,14 +753,14 @@ footer a {
 }
 
 .project-summary {
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
     line-height: 1.6;
 }
 
 .project-details {
     margin-top: 0.5rem;
     padding-left: 1.1rem;
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
     line-height: 1.5;
 }
 
@@ -759,7 +776,7 @@ footer a {
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
     border-bottom: 1px solid currentColor;
     padding-bottom: 0.15rem;
     text-decoration: none;
@@ -792,7 +809,7 @@ footer a {
     display: block;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 961px) {
     .project-live-preview {
         padding: 0 0 1.25rem 0;
     }
@@ -843,29 +860,51 @@ footer a {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    border: none;
-    background: transparent;
-    color: #2a2a2a;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 0;
-    line-height: 1;
-    opacity: 0.7;
-    width: 1.25em;
-    height: 1.25em;
-    display: inline-flex;
-    align-items: center;
+}
+
+#modal-close.close-button {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.close-button {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    font-family: Arial, sans-serif;
-    padding-top: 0.05em;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: 0;
+    padding: 0.75rem;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: opacity 0.2s ease;
 }
 
-#modal-close:focus {
-    outline-offset: 0;
+.close-button:hover {
+    opacity: 0.8;
 }
 
-#modal-close:hover {
-    opacity: 1;
+.close-button__bar {
+    display: block;
+    width: 22px;
+    height: 3px;
+    background-color: #2a2a2a;
+    transform-origin: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.close-button__bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.close-button__bar:nth-child(2) {
+    opacity: 0;
+}
+
+.close-button__bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 #modal-header {
@@ -953,7 +992,7 @@ footer a {
 }
 
 .thankyou-card p {
-    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    font-size: clamp(1.125rem, 1.3vw, 1.2rem);
     line-height: 1.6;
     margin-bottom: 2rem;
 }
@@ -1072,7 +1111,7 @@ footer a {
     }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 961px) {
     #site-header {
         padding: 2.5rem 2.25rem 1.75rem;
     }
@@ -1153,143 +1192,8 @@ footer a {
     }
 }
 
-@media (min-width: 801px) and (max-width: 960px) {
 
-    #site-header {
-        padding: 2.5rem 2.5rem 2rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    #header-cards {
-        width: 100%;
-        max-width: var(--content-max);
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-areas:
-            "name links"
-            "polaroid polaroid";
-        gap: 2rem 2.25rem;
-        align-items: stretch;
-        justify-content: center;
-        justify-items: center;
-    }
-
-    #name-card {
-        grid-area: name;
-        aspect-ratio: 1 / 1;
-        height: 100%;
-        min-width: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 0;
-    }
-
-    #links-card {
-        grid-area: links;
-        aspect-ratio: 1 / 1;
-        height: 100%;
-        min-width: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1.8rem 1.6rem;
-        gap: 1.5rem;
-        margin-top: 0;
-    }
-
-    #name-link {
-        height: 100%;
-    }
-
-    .site-nav {
-        gap: 0.5rem;
-        margin-top: 0.75rem;
-        width: 100%;
-        align-items: center;
-    }
-
-    .site-nav a {
-        font-size: clamp(1.2rem, 1.9vw, 1.6rem);
-        padding: 0.25rem 0.6rem;
-    }
-
-    #polaroid-card {
-        grid-area: polaroid;
-        max-width: 42rem;
-        margin: 1.5rem auto 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #polaroid-card img {
-        width: 80%;
-        max-width: 440px;
-        height: auto;
-        transform: rotate(-6deg);
-    }
-
-    body,
-    main p,
-    .pricing-intro p,
-    .pricing-card p,
-    .pricing-card ul,
-    .pricing-card li,
-    .pricing-note p,
-    .handcoded-intro p,
-    .handcoded-benefits p,
-    .compare-block li,
-    .handcoded-cta p,
-    .portfolio-intro p,
-    .portfolio-alert p {
-        align-items: stretch;
-    }
-
-    .project-details li {
-        font-size: clamp(1.1rem, 2vw, 1.35rem);
-        line-height: 1.65;
-    }
-
-    main h1,
-    .pricing-intro h1,
-    .handcoded-intro h1,
-    .portfolio-intro h1 {
-        font-size: clamp(2rem, 4.6vw, 3rem);
-        line-height: 1.25;
-    }
-
-    .pricing-card h2,
-    .benefit-card h2,
-    .compare-block h3,
-    .project-card-header h2 {
-        font-size: clamp(1.35rem, 3vw, 1.9rem);
-        letter-spacing: 0.06em;
-    }
-
-    .portfolio-alert-title {
-        font-size: clamp(1.25rem, 3vw, 1.7rem);
-    }
-
-    .project-live-link {
-        font-size: clamp(1rem, 2.4vw, 1.4rem);
-    }
-
-    footer small {
-        font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-    }
-
-    footer a {
-        font-size: clamp(0.95rem, 1.8vw, 1.15rem);
-        display: inline-block;
-        width: fit-content;
-    }
-    }
-
-@media (max-width: 800px) {
+@media (max-width: 961px) {
     html {
         font-size: 18px;
     }
@@ -1328,15 +1232,15 @@ footer a {
     #links-top {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         width: 100%;
-        gap: 0.75rem;
+        gap: 1.5rem;
     }
 
     #links-card .primary-cta {
         flex: 1 1 0;
-        max-width: calc(100% - 62px);
-        padding: 1.05rem 1.75rem;
+        padding: 1.2rem 2rem;
+        font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     }
 
     .nav-toggle {
@@ -1344,18 +1248,32 @@ footer a {
         align-items: center;
         justify-content: center;
         flex: 0 0 auto;
-        padding: 1.05rem 1.2rem;
-        margin-right: 0.25rem;
-        border: 1px solid rgba(244, 242, 232, 0.6);
-        background-color: rgba(0, 0, 0, 0.5);
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+        padding: 1.2rem;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+        width: 3.5rem;
+        height: 3.5rem;
+        gap: 6px;
     }
 
     .nav-toggle-bar {
-        width: 22px;
+        width: 28px;
         height: 3px;
         border-radius: 0;
         background-color: #f4f2e8;
+    }
+
+    .nav-toggle.is-active .nav-toggle-bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .nav-toggle.is-active .nav-toggle-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.is-active .nav-toggle-bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 
     .site-nav {
@@ -1492,13 +1410,13 @@ footer a {
     }
 
     .field label {
-        font-size: 1rem;
+        font-size: 1.05rem;
         letter-spacing: 0.06em;
     }
 
     .field input,
     .field textarea {
-        font-size: 1rem;
+        font-size: 1.125rem;
         padding: 0.6rem 0.7rem;
     }
 
@@ -1526,7 +1444,7 @@ footer a {
 
     .modal-submit {
         margin-top: 0.5rem;
-        font-size: 1.05rem;
+        font-size: 1.125rem;
         padding: 0.7rem 1.6rem;
     
     }
@@ -1537,7 +1455,7 @@ footer a {
     .modal-form .field label,
     .modal-form .field input,
     .modal-form .field textarea {
-        font-size: 1.1rem;
+        font-size: 1.125rem;
         line-height: 1.7;
     }
 
@@ -1590,11 +1508,11 @@ footer a {
     }
 
     .portfolio-alert-title {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
     }
 
     .portfolio-alert p {
-        font-size: 0.95rem;
+        font-size: 1rem;
         line-height: 1.6;
     }
 
@@ -1636,13 +1554,13 @@ footer a {
     }
 
     footer small {
-        font-size: 1.05rem;
+        font-size: 1rem;
         padding: 2rem 1.25rem 0.25rem;
         text-align: center;
     }
 
     footer a {
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding: 0 0 2.25rem 0;
         display: inline-block;
         width: fit-content;
@@ -1663,17 +1581,17 @@ footer a {
     }
 
     .field label {
-        font-size: clamp(1.15rem, 4vw, 1.45rem);
+        font-size: clamp(1.125rem, 4vw, 1.45rem);
     }
 
     .field input,
     .field textarea {
-        font-size: clamp(1.1rem, 4vw, 1.35rem);
+        font-size: clamp(1.125rem, 4vw, 1.35rem);
         padding: 1rem 1.1rem;
     }
 
     .modal-submit {
-        font-size: clamp(1.2rem, 4.2vw, 1.45rem);
+        font-size: clamp(1.125rem, 4.2vw, 1.45rem);
         padding: 1.1rem 2.5rem;
     }
 }
@@ -1694,7 +1612,7 @@ footer a {
 }
 
 .cms-intro p {
-    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    font-size: clamp(1.125rem, 1.4vw, 1.25rem);
     line-height: 1.7;
     margin: 0.75rem 0 0;
 }
@@ -1704,16 +1622,26 @@ footer a {
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: clamp(0.95rem, 1.1vw, 1rem);
     opacity: 0.8;
     margin: 0 0 0.75rem;
 }
 
 .cms-caption {
     margin: 0.85rem 0 0;
-    font-size: 0.95rem;
+    font-size: clamp(1rem, 1.15vw, 1.05rem);
     line-height: 1.55;
     opacity: 0.9;
+}
+
+.cms-caption-sub {
+    display: block;
+    margin: 0.5rem 0 0;
+    font-size: clamp(1rem, 1.15vw, 1.05rem);
+    line-height: 1.55;
+    color: #8B1A1A;
+    font-weight: 500;
+    font-style: italic;
 }
 
 .cms-image {
@@ -1729,15 +1657,72 @@ footer a {
 }
 
 .cms-fine {
-    font-size: 0.95rem;
+    font-size: clamp(1rem, 1.15vw, 1.05rem);
     line-height: 1.6;
     opacity: 0.9;
     margin-top: 0.75rem;
 }
 
-@media (max-width: 960px) {
+.cms-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    z-index: 2000;
+}
+
+.cms-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cms-lightbox__inner {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cms-lightbox__img {
+    max-width: 100%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.cms-lightbox__close {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    border: 0;
+    background: transparent;
+}
+
+.cms-lightbox__close .close-button__bar {
+    background-color: #f4f2e8;
+}
+
+body.cms-no-scroll {
+    overflow: hidden;
+}
+
+@media (max-width: 961px) {
     #cms-main {
         padding: 2.75rem 1.75rem 2rem;
+    }
+
+    .cms-lightbox__close {
+        top: -2.5rem;
+        right: 0;
     }
 }
 
