@@ -1356,8 +1356,8 @@ footer a {
     .pricing-note {
         margin-top: 1.6rem;
         gap: 1.5rem;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .pricing-note .primary-cta {
