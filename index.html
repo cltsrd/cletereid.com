@@ -55,7 +55,7 @@
             </div>
         </header>
         <main id="home-main">
-            <header class="home-intro">
+            <header>
                 <h1>Custom Websites for Small Businesses and Beyond.</h1>
                 <p>Built for performance, clarity and longevity.</p>
             </header>
@@ -83,10 +83,10 @@
             <a href="privacy.html">Privacy Policy</a>
         </footer>
         <!-- Contact Modal -->
-        <div id="contact-modal" class="modal-backdrop" aria-hidden="true">
-            <div id="contact-dialog" class="modal" role="dialog" aria-modal="true" aria-labelledby="contact-title">
-                <button id="modal-close" class="modal-close" type="button" aria-label="Close contact form" data-close-modal>&times;</button>
-                <header id="modal-header" class="modal-header">
+        <div id="contact-modal" aria-hidden="true">
+            <div id="contact-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+                <button id="modal-close" type="button" aria-label="Close contact form" data-close-modal>&times;</button>
+                <header id="modal-header">
                     <h2 id="contact-title">Contact me, and I'll get back to you shortly.</h2>
                 </header>
                 <form class="modal-form" action="https://formsubmit.co/hello@cletereid.com" method="post">
@@ -108,5 +108,10 @@
                 </form>
             </div>
         </div>
+        <button id="back-to-top" type="button" aria-label="Back to top">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
     </body>
 </html>

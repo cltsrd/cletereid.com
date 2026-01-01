@@ -133,11 +133,10 @@ if (navToggle && siteNav) {
     });
 }
 
-function initCmsMobileLightbox() {
+function initCmsLightbox() {
     const cmsMain = document.getElementById("cms-main");
     if (!cmsMain) return;
 
-    const mq = window.matchMedia("(max-width: 960px)");
     const images = Array.from(cmsMain.querySelectorAll("img.cms-image"));
     if (!images.length) return;
 
@@ -150,6 +149,11 @@ function initCmsMobileLightbox() {
         if (lightbox) {
             lightboxImg = lightbox.querySelector(".cms-lightbox__img");
             closeBtn = lightbox.querySelector(".cms-lightbox__close");
+            // Ensure close button has correct structure
+            if (closeBtn && !closeBtn.querySelector('.close-button__bar')) {
+                closeBtn.classList.add('close-button');
+                closeBtn.innerHTML = '<span class="close-button__bar"></span><span class="close-button__bar"></span><span class="close-button__bar"></span>';
+            }
             return;
         }
 
@@ -169,9 +173,9 @@ function initCmsMobileLightbox() {
 
         closeBtn = document.createElement("button");
         closeBtn.type = "button";
-        closeBtn.className = "cms-lightbox__close";
+        closeBtn.className = "cms-lightbox__close close-button";
         closeBtn.setAttribute("aria-label", "Close image preview");
-        closeBtn.textContent = "×";
+        closeBtn.innerHTML = '<span class="close-button__bar"></span><span class="close-button__bar"></span><span class="close-button__bar"></span>';
 
         inner.appendChild(closeBtn);
         inner.appendChild(lightboxImg);
@@ -215,22 +219,15 @@ function initCmsMobileLightbox() {
         });
     }
 
-    function bind(enable) {
+    function bindImages() {
         images.forEach((img) => {
-            img.classList.toggle("cms-image--enlargeable", enable);
+            img.classList.add("cms-image--enlargeable");
             img.removeEventListener("click", img.__cmsLightboxHandler);
             img.removeEventListener("keydown", img.__cmsLightboxKeyHandler);
 
-            if (!enable) {
-                img.removeAttribute("tabindex");
-                img.removeAttribute("role");
-                img.removeAttribute("aria-label");
-                return;
-            }
-
             img.setAttribute("tabindex", "0");
             img.setAttribute("role", "button");
-            img.setAttribute("aria-label", (img.alt ? img.alt + ". " : "") + "Tap to enlarge");
+            img.setAttribute("aria-label", (img.alt ? img.alt + ". " : "") + "Click to enlarge");
 
             const handler = () => openLightbox(img);
             const keyHandler = (e) => {
@@ -247,8 +244,7 @@ function initCmsMobileLightbox() {
             img.addEventListener("keydown", keyHandler);
         });
 
-        if (enable) addCaptionSubtext();
-        if (!enable) closeLightbox();
+        addCaptionSubtext();
     }
 
     function onKeydown(e) {
@@ -256,14 +252,53 @@ function initCmsMobileLightbox() {
     }
 
     document.addEventListener("keydown", onKeydown);
+    bindImages();
+}
 
-    bind(mq.matches);
+function initCloseButtons() {
+    // Initialize modal close button
+    const modalClose = document.getElementById("modal-close");
+    if (modalClose && !modalClose.querySelector('.close-button__bar')) {
+        modalClose.classList.add('close-button');
+        modalClose.innerHTML = '<span class="close-button__bar"></span><span class="close-button__bar"></span><span class="close-button__bar"></span>';
+    }
+    
+    // Initialize lightbox close button (if it exists on page load)
+    const lightboxClose = document.querySelector(".cms-lightbox__close");
+    if (lightboxClose && !lightboxClose.querySelector('.close-button__bar')) {
+        lightboxClose.classList.add('close-button');
+        lightboxClose.innerHTML = '<span class="close-button__bar"></span><span class="close-button__bar"></span><span class="close-button__bar"></span>';
+    }
+}
 
-    mq.addEventListener("change", (e) => {
-        bind(e.matches);
-    });
+function initBackToTop() {
+    const backToTop = document.getElementById("back-to-top");
+    if (!backToTop) return;
+
+    function toggleVisibility() {
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add("is-visible");
+        } else {
+            backToTop.classList.remove("is-visible");
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+    window.addEventListener("scroll", toggleVisibility);
+    backToTop.addEventListener("click", scrollToTop);
+    
+    // Check initial state
+    toggleVisibility();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    initCmsMobileLightbox();
+    initCloseButtons();
+    initCmsLightbox();
+    initBackToTop();
 });
