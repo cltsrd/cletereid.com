@@ -1491,19 +1491,24 @@ footer a {
     }
 
     .cms-lightbox {
-        padding: 0;
+        padding: 0 !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 
     .cms-lightbox__inner {
-        width: 100%;
-        max-width: 100vw;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        display: block !important;
+        position: relative;
     }
 
     .cms-lightbox__img {
-        width: 100vw;
-        max-width: 100vw;
-        height: auto;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: auto !important;
         object-fit: contain;
+        display: block !important;
     }
 
     .cms-lightbox__close {
