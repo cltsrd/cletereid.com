@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Force HTTPS and remove www prefix
+# First, redirect to HTTPS if not already using it
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Then, redirect www to non-www (only if HTTPS is on)
+RewriteCond %{HTTPS} on
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [L,R=301]
+
