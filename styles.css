@@ -534,6 +534,19 @@ footer a {
     margin-top: 0.3rem;
 }
 
+.cms-learn-more {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: rgba(139, 26, 26, 0.8);
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+.cms-learn-more:hover {
+    opacity: 1;
+}
+
 .pricing-note {
     display: flex;
     flex-direction: column;
@@ -1514,6 +1527,27 @@ footer a {
     .cms-lightbox__close {
         top: -2.5rem;
         right: 0;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible,
+    [tabindex]:not([tabindex="-1"]):focus-visible {
+        outline: none !important;
+        outline-offset: 0 !important;
+    }
+
+    .skip-link:focus {
+        outline: none !important;
+        outline-offset: 0 !important;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+        border-color: inherit !important;
+        box-shadow: none !important;
     }
 }
 
