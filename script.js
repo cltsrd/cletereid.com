@@ -1,9 +1,13 @@
 const modalBackdrop = document.getElementById("contact-modal");
+const privacyBackdrop = document.getElementById("privacy-modal");
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.getElementById("site-nav");
 const contactTriggers = document.querySelectorAll(".contact-trigger");
+const privacyTriggers = document.querySelectorAll(".privacy-trigger");
 const closeButtons = document.querySelectorAll("[data-close-modal]");
+const privacyCloseButtons = document.querySelectorAll("[data-close-privacy]");
 const modalDialog = document.getElementById("contact-dialog");
+const privacyDialog = document.getElementById("privacy-dialog");
 const modalForm = modalDialog?.querySelector("form");
 const submitButton = modalForm?.querySelector('button[type="submit"]');
 
@@ -88,6 +92,92 @@ if (modalBackdrop) {
     document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && modalBackdrop.classList.contains("is-visible")) {
             closeModal();
+        }
+    });
+}
+
+// Privacy Modal Functions
+let privacyLastFocusedElement = null;
+let privacyFocusableElements = [];
+let privacyFirstFocusableElement = null;
+let privacyLastFocusableElement = null;
+
+function getPrivacyFocusableElements() {
+    if (!privacyDialog) return;
+    
+    const selectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+    privacyFocusableElements = Array.from(privacyDialog.querySelectorAll(selectors)).filter(
+        el => !el.hasAttribute('disabled') && el.offsetParent !== null
+    );
+    privacyFirstFocusableElement = privacyFocusableElements[0];
+    privacyLastFocusableElement = privacyFocusableElements[privacyFocusableElements.length - 1];
+}
+
+function trapPrivacyFocus(event) {
+    if (event.key !== 'Tab') return;
+    
+    if (event.shiftKey) {
+        if (document.activeElement === privacyFirstFocusableElement) {
+            event.preventDefault();
+            privacyLastFocusableElement.focus();
+        }
+    } else {
+        if (document.activeElement === privacyLastFocusableElement) {
+            event.preventDefault();
+            privacyFirstFocusableElement.focus();
+        }
+    }
+}
+
+function openPrivacyModal(event) {
+    if (event) {
+        event.preventDefault();
+        privacyLastFocusedElement = event.target;
+    }
+    if (!privacyBackdrop) return;
+
+    privacyBackdrop.classList.add("is-visible");
+    privacyBackdrop.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    
+    getPrivacyFocusableElements();
+    if (privacyFirstFocusableElement) {
+        privacyFirstFocusableElement.focus();
+    }
+    
+    document.addEventListener('keydown', trapPrivacyFocus);
+}
+
+function closePrivacyModal() {
+    if (!privacyBackdrop) return;
+
+    privacyBackdrop.classList.remove("is-visible");
+    privacyBackdrop.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    
+    document.removeEventListener('keydown', trapPrivacyFocus);
+    
+    if (privacyLastFocusedElement) {
+        privacyLastFocusedElement.focus();
+    }
+}
+
+if (privacyBackdrop) {
+    privacyTriggers.forEach((el) => {
+        el.addEventListener("click", openPrivacyModal);
+    });
+
+    privacyCloseButtons.forEach((button) => {
+        button.addEventListener("click", closePrivacyModal);
+    });
+
+    privacyBackdrop.addEventListener("click", (event) => {
+        if (event.target === privacyBackdrop) closePrivacyModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && privacyBackdrop.classList.contains("is-visible")) {
+            closePrivacyModal();
         }
     });
 }
@@ -263,6 +353,13 @@ function initCloseButtons() {
         modalClose.innerHTML = '<span class="close-button__bar"></span><span class="close-button__bar"></span><span class="close-button__bar"></span>';
     }
     
+    // Initialize privacy close button
+    const privacyClose = document.getElementById("privacy-close");
+    if (privacyClose && !privacyClose.querySelector('.close-button__bar')) {
+        privacyClose.classList.add('close-button');
+        privacyClose.innerHTML = '<span class="close-button__bar"></span><span class="close-button__bar"></span><span class="close-button__bar"></span>';
+    }
+    
     // Initialize lightbox close button (if it exists on page load)
     const lightboxClose = document.querySelector(".cms-lightbox__close");
     if (lightboxClose && !lightboxClose.querySelector('.close-button__bar')) {
@@ -297,8 +394,21 @@ function initBackToTop() {
     toggleVisibility();
 }
 
+function initPrivacyPageScrollLock() {
+    // Check if we're on the privacy policy page
+    const privacyMain = document.getElementById("thankyou-main");
+    if (privacyMain) {
+        // Disable scrolling on the privacy policy page
+        document.body.classList.add("modal-open");
+        // Add class to body and html for styling purposes
+        document.body.classList.add("privacy-page");
+        document.documentElement.classList.add("privacy-page");
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     initCloseButtons();
     initCmsLightbox();
     initBackToTop();
+    initPrivacyPageScrollLock();
 });

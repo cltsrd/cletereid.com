@@ -23,7 +23,8 @@
     --transition-modal: 0.25s ease;
 }
 
-#contact-modal:not(.is-visible) {
+#contact-modal:not(.is-visible),
+#privacy-modal:not(.is-visible) {
     display: none;
 }
 
@@ -171,7 +172,8 @@ footer a {
 .compare-block--white,
 .project-card--white,
 .thankyou-card,
-#contact-dialog {
+#contact-dialog,
+#privacy-dialog {
     background-image: var(--bg-white);
     background-size: cover;
     background-repeat: no-repeat;
@@ -206,7 +208,8 @@ footer a {
 .project-card,
 .portfolio-alert,
 .thankyou-card,
-#contact-dialog {
+#contact-dialog,
+#privacy-dialog {
     box-shadow: var(--shadow-card);
 }
 
@@ -848,10 +851,13 @@ footer a {
     display: block;
 }
 
-#contact-modal {
+#contact-modal,
+#privacy-modal {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -862,14 +868,15 @@ footer a {
     z-index: 1000;
 }
 
-#contact-modal.is-visible {
+#contact-modal.is-visible,
+#privacy-modal.is-visible {
     opacity: 1;
     visibility: visible;
-
     display: flex;
 }
 
-#contact-dialog {
+#contact-dialog,
+#privacy-dialog {
     width: min(36rem, 100%);
     border-radius: 0;
     color: var(--color-dark);
@@ -880,7 +887,8 @@ footer a {
     gap: 1rem;
 }
 
-#modal-close {
+#modal-close,
+#privacy-close {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -930,15 +938,32 @@ footer a {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-#modal-header {
+#modal-header,
+#privacy-header {
     display: block;
-    padding: 0 0 1.25rem 0;
+    padding: 0 0 1rem 0;
     margin: 0;
     text-align: left;
 }
 
-#modal-header h2 {
+#modal-header h2,
+#privacy-header h2 {
     letter-spacing: 0.02em;
+    text-align: left;
+}
+
+.privacy-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: left;
+}
+
+.privacy-content p {
+    font-size: clamp(1.125rem, 1.3vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
 }
 
 .modal-form {
@@ -995,17 +1020,35 @@ footer a {
 }
 
 #thankyou-main {
-    min-height: calc(100vh - 6rem);
-    padding: 4rem 2rem;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
+    z-index: 1000;
+}
+
+/* Hide footer and back-to-top button on privacy page */
+body.privacy-page footer,
+body.privacy-page #back-to-top {
+    display: none;
+}
+
+/* Ensure black background on privacy page */
+body.privacy-page {
+    background-color: var(--color-black);
+    background-image: none;
+}
+
+html.privacy-page {
+    background-color: var(--color-black);
 }
 
 .thankyou-card {
-    max-width: 34rem;
-    width: 100%;
-    padding: 2.75rem 2.5rem 2.5rem;
+    width: min(36rem, 100%);
+    padding: 2.5rem 2.25rem 2rem;
     text-align: center;
 }
 
@@ -1026,7 +1069,13 @@ footer a {
 }
 
 .delete-message {
-    text-decoration: underline;
+    color: var(--color-red);
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+.delete-message:hover {
+    opacity: 1;
 }
 
 @media (min-width: 961px) {
@@ -1324,11 +1373,24 @@ footer a {
         margin-left: 0;
     }
 
-    #contact-modal {
+    #contact-modal,
+    #privacy-modal {
         padding: 0.75rem;
     }
 
-    #contact-dialog {
+    #thankyou-main {
+        padding: 0.75rem;
+    }
+
+    #contact-dialog,
+    #privacy-dialog {
+        width: 88vw;
+        max-width: 420px;
+        padding: 2.25rem 0.8rem 1rem;
+        margin: auto;
+    }
+
+    .thankyou-card {
         width: 88vw;
         max-width: 420px;
         padding: 2.25rem 0.8rem 1rem;
@@ -1422,7 +1484,6 @@ footer a {
     .benefit-card,
     .compare-block,
     .project-card,
-    .thankyou-card,
     .portfolio-alert {
         padding: 1.8rem 1.4rem 1.7rem;
         max-width: 34rem;
@@ -1562,11 +1623,21 @@ footer a {
         padding: 2.25rem 1.25rem 1.75rem;
     }
 
-    #contact-modal {
+    #contact-modal,
+    #privacy-modal {
         padding: 1.25rem;
     }
 
-    #contact-dialog {
+    #thankyou-main {
+        padding: 1.25rem;
+    }
+
+    #contact-dialog,
+    #privacy-dialog {
+        padding: 2rem 1.75rem 1.75rem;
+    }
+
+    .thankyou-card {
         padding: 2rem 1.75rem 1.75rem;
     }
 
@@ -1607,7 +1678,15 @@ footer a {
 }
 
 @media (min-width: 601px) and (max-width: 800px) {
-    #contact-dialog {
+    #contact-dialog,
+    #privacy-dialog {
+        width: 88vw;
+        max-width: 88vw;
+        padding: 2.25rem 1.85rem 2rem;
+        margin: 0 auto;
+    }
+
+    .thankyou-card {
         width: 88vw;
         max-width: 88vw;
         padding: 2.25rem 1.85rem 2rem;

@@ -119,7 +119,7 @@
         </main>
         <footer>
             <small>©2026 Clete Reid Web Development LLC</small>
-            <a href="privacy.html">Privacy Policy</a>
+            <a href="#" class="privacy-trigger">Privacy Policy</a>
         </footer>
         <!-- Contact Modal -->
         <div id="contact-modal" aria-hidden="true">
@@ -145,6 +145,20 @@
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://cletereid.com/thanks.html">
                 </form>
+            </div>
+        </div>
+        <!-- Privacy Modal -->
+        <div id="privacy-modal" aria-hidden="true">
+            <div id="privacy-dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+                <button id="privacy-close" type="button" aria-label="Close privacy policy" data-close-privacy>&times;</button>
+                <header id="privacy-header">
+                    <h2 id="privacy-title">Privacy Policy</h2>
+                </header>
+                <div class="privacy-content">
+                    <p>This site doesn't use analytics, tracking scripts or advertising cookies. I don't track you around the web or sell your data.</p>
+                    <p>If you use the contact form, I'll see your name, email and message. That information is emailed to me and used only so I can read it and respond.</p>
+                    <p>If you ever want me to delete past messages from you, email me at <a class="delete-message" href="mailto:hello@cletereid.com">hello@cletereid.com</a>.</p>
+                </div>
             </div>
         </div>
         <button id="back-to-top" type="button" aria-label="Back to top">
