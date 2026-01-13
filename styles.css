@@ -127,6 +127,18 @@ main p {
     margin: 0 0 1.25rem 0;
 }
 
+#home-main ul {
+    margin-top: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-left: 2rem;
+    font-size: clamp(1.125rem, 1.3vw, 1.25rem);
+    line-height: 1.6;
+}
+
+main li + li {
+    margin-top: 0.3rem;
+}
+
 main em {
     font-style: italic;
 }
