@@ -851,6 +851,7 @@ footer a {
     display: block;
 }
 
+
 #contact-modal,
 #privacy-modal {
     position: fixed;
@@ -1561,6 +1562,7 @@ html.privacy-page {
         margin: 0;
     }
 
+
     #cms-main {
         padding: 2.75rem 1.75rem 2rem;
     }
@@ -1892,4 +1894,5 @@ iframe {
         width: 1.25rem;
         height: 1.25rem;
     }
+}
 }
