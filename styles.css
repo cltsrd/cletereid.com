@@ -161,12 +161,28 @@ footer {
     gap: 0.25rem;
 }
 
-footer small {
-    font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+.footer-copyright {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     padding: 1rem 0 0 0;
     margin: 0 5rem 0 5rem;
     text-align: left;
+}
+
+footer small {
+    font-size: clamp(0.9rem, 1.1vw, 1.05rem);
     white-space: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-logo {
+    width: clamp(0.9rem, 1.1vw, 1.05rem);
+    height: clamp(0.9rem, 1.1vw, 1.05rem);
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
 }
 
 footer a {
@@ -1430,11 +1446,23 @@ html.privacy-page {
         text-align: center;
     }
 
+    .footer-copyright {
+        justify-content: center;
+        margin: 0;
+        padding: 2rem 1.25rem 0.25rem;
+    }
+
     footer small {
         font-size: 0.95rem;
-        padding: 2rem 1.25rem 0.25rem;
+        padding: 0;
+        margin: 0;
         text-align: center;
         white-space: nowrap;
+    }
+
+    .footer-logo {
+        width: 0.95rem;
+        height: 0.95rem;
     }
 
     footer a {
@@ -1742,11 +1770,23 @@ html.privacy-page {
         text-align: center;
     }
 
+    .footer-copyright {
+        justify-content: center;
+        margin: 0;
+        padding: 2rem 1.25rem 0.25rem;
+    }
+
     footer small {
         font-size: 0.9rem;
-        padding: 2rem 1.25rem 0.25rem;
+        padding: 0;
+        margin: 0;
         text-align: center;
         white-space: nowrap;
+    }
+
+    .footer-logo {
+        width: 0.9rem;
+        height: 0.9rem;
     }
 
     footer a {
