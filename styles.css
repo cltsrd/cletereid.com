@@ -226,7 +226,8 @@ footer a {
 }
 
 #links-card,
-.pricing-card--premium {
+.pricing-card--premium,
+.refactor-card {
     background-image: var(--bg-black);
     background-size: cover;
     background-repeat: no-repeat;
@@ -542,6 +543,31 @@ footer a {
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
+}
+
+.refactor-card {
+    padding: 2rem 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: var(--color-cream);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.refactor-card-heading {
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.125rem, 1.3vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: 0.02em;
+}
+
+.refactor-card p {
+    font-size: clamp(1.125rem, 1.3vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0;
 }
 
 .pricing-card--business,
