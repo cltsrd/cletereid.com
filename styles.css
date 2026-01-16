@@ -127,6 +127,38 @@ main p {
     margin: 0 0 1.25rem 0;
 }
 
+main a {
+    color: var(--color-red);
+    text-decoration: underline;
+    transition: color var(--transition-base);
+}
+
+main a:hover {
+    color: var(--color-red-dark);
+}
+
+.pricing-link {
+    display: inline-block;
+    color: var(--color-red);
+    opacity: 0.8;
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    text-decoration: none;
+    line-height: 1.5;
+    font-style: italic;
+    transition: transform var(--transition-base), text-shadow var(--transition-base), opacity var(--transition-base);
+}
+
+.pricing-link:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    opacity: 1;
+}
+
+.pricing-link:active {
+    transform: translateY(1px);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 #home-main ul {
     margin-top: 0.75rem;
     margin-bottom: 1.25rem;
@@ -591,6 +623,27 @@ footer a {
     font-size: clamp(1.125rem, 1.3vw, 1.25rem);
     line-height: 1.6;
     margin: 0;
+}
+
+.refactor-cta {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--color-cream);
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    text-decoration: none;
+    line-height: 1.5;
+    font-style: italic;
+    transition: transform var(--transition-base), text-shadow var(--transition-base);
+}
+
+.refactor-cta:hover {
+    transform: translateY(-3px);
+    text-shadow: var(--shadow-text);
+}
+
+.refactor-cta:active {
+    transform: translateY(1px);
+    text-shadow: var(--shadow-text-active);
 }
 
 .payment-banner {
