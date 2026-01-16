@@ -229,6 +229,7 @@ footer a {
 }
 
 .pricing-card--starter,
+.pricing-card--expanded,
 .benefit-card--starter,
 .compare-block--white,
 .project-card--white,
@@ -243,7 +244,8 @@ footer a {
 
 #links-card,
 .pricing-card--premium,
-.refactor-card {
+.refactor-card,
+.payment-banner {
     background-image: var(--bg-black);
     background-size: cover;
     background-repeat: no-repeat;
@@ -547,6 +549,11 @@ footer a {
     line-height: 1.7;
 }
 
+.pricing-commitment {
+    color: var(--color-red);
+    font-weight: 500;
+}
+
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -586,6 +593,55 @@ footer a {
     margin: 0;
 }
 
+.payment-banner {
+    padding: 2rem 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: var(--color-cream);
+    margin-top: 0;
+    margin-bottom: 2rem;
+    width: calc((100% - 5rem) / 3);
+    max-width: calc((100% - 5rem) / 3);
+}
+
+.payment-banner h2 {
+    font-family: "titular", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 0.9rem 0;
+}
+
+.payment-banner-tagline {
+    font-size: clamp(1.125rem, 1.3vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.payment-banner-list {
+    margin: 0;
+    padding-left: 2rem;
+    font-size: clamp(1.125rem, 1.3vw, 1.25rem);
+    line-height: 1.6;
+}
+
+.payment-banner-list li {
+    margin-top: 0.3rem;
+}
+
+.payment-banner-list li:first-child {
+    margin-top: 0;
+}
+
+.payment-banner-note {
+    font-size: clamp(1.125rem, 1.3vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+}
+
 .pricing-card--business,
 .pricing-card--premium {
     color: var(--color-cream);
@@ -607,11 +663,20 @@ footer a {
     text-transform: uppercase;
 }
 
+.pricing-timeline {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    line-height: 1.4;
+    opacity: 0.85;
+    margin-top: -0.3rem;
+    margin-bottom: 0.2rem;
+}
+
 .pricing-tagline {
     font-size: clamp(1rem, 1.3vw, 1.15rem);
     line-height: 1.5;
     opacity: 0.95;
 }
+
 
 .pricing-card ul {
     margin-top: 0.75rem;
@@ -627,14 +692,22 @@ footer a {
 .cms-learn-more {
     display: inline-block;
     margin-top: 0.75rem;
-    color: rgba(139, 26, 26, 0.8);
+    color: var(--color-cream);
     font-size: clamp(0.9rem, 1.1vw, 1rem);
     text-decoration: none;
     line-height: 1.5;
+    font-style: italic;
+    transition: transform var(--transition-base), text-shadow var(--transition-base);
 }
 
 .cms-learn-more:hover {
-    opacity: 1;
+    transform: translateY(-3px);
+    text-shadow: var(--shadow-text);
+}
+
+.cms-learn-more:active {
+    transform: translateY(1px);
+    text-shadow: var(--shadow-text-active);
 }
 
 .pricing-note {
@@ -647,6 +720,21 @@ footer a {
 
 .pricing-note p {
     margin: 0;
+}
+
+.pricing-note ul {
+    margin: 0;
+    padding-left: 2rem;
+    font-size: clamp(1.125rem, 1.4vw, 1.25rem);
+    line-height: 1.7;
+}
+
+.pricing-note li {
+    margin-top: 0.3rem;
+}
+
+.pricing-note li:first-child {
+    margin-top: 0;
 }
 
 .pricing-note .primary-cta {
@@ -1639,6 +1727,16 @@ html.privacy-page {
 
     .pricing-grid {
         grid-template-columns: 1fr;
+    }
+
+    .pricing-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .payment-banner {
+        width: 100%;
+        max-width: 100%;
     }
 
     .handcoded-benefits {
