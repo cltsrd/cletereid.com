@@ -406,9 +406,44 @@ function initPrivacyPageScrollLock() {
     }
 }
 
+function initPortfolioIframes() {
+    const iframes = document.querySelectorAll(".live-iframe");
+    
+    iframes.forEach((iframe) => {
+        const loadingIndicator = iframe.previousElementSibling;
+        
+        if (!loadingIndicator || !loadingIndicator.classList.contains("iframe-loading")) {
+            return;
+        }
+        
+        function handleLoad() {
+            iframe.classList.add("is-loaded");
+            loadingIndicator.classList.add("is-hidden");
+            // Remove after transition completes
+            setTimeout(() => {
+                loadingIndicator.style.display = "none";
+            }, 300);
+        }
+        
+        // Check if iframe is already loaded
+        if (iframe.contentDocument && iframe.contentDocument.readyState === "complete") {
+            handleLoad();
+        } else {
+            iframe.addEventListener("load", handleLoad);
+            // Fallback timeout in case load event doesn't fire
+            setTimeout(() => {
+                if (!iframe.classList.contains("is-loaded")) {
+                    handleLoad();
+                }
+            }, 10000);
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     initCloseButtons();
     initCmsLightbox();
     initBackToTop();
     initPrivacyPageScrollLock();
+    initPortfolioIframes();
 });
