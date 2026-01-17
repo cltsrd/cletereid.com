@@ -1543,6 +1543,9 @@ html:has(#thankyou-main) {
     bottom: 0;
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
     background: rgba(0, 0, 0, 0.75);
     display: flex;
     align-items: center;
@@ -1936,6 +1939,8 @@ html.privacy-page {
 
     #thankyou-main {
         padding: 0.75rem;
+        min-height: 100vh;
+        min-height: 100dvh;
     }
 
     #contact-dialog,
@@ -2286,6 +2291,8 @@ html.privacy-page {
 
     #thankyou-main {
         padding: 1.25rem;
+        min-height: 100vh;
+        min-height: 100dvh;
     }
 
     #contact-dialog,
