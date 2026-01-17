@@ -697,10 +697,10 @@ footer a {
 }
 
 .refactor-card-heading {
-    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-family: "titular", sans-serif;
     font-weight: 700;
-    font-size: clamp(1.125rem, 1.3vw, 1.25rem);
-    line-height: 1.6;
+    font-size: clamp(1.5rem, 2.2vw, 1.8rem);
+    line-height: 1.3;
     margin: 0 0 0.75rem 0;
     letter-spacing: 0.02em;
 }
