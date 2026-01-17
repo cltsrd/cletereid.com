@@ -1529,6 +1529,12 @@ footer a {
     color: var(--color-cream);
 }
 
+body:has(#thankyou-main),
+html:has(#thankyou-main) {
+    overflow: hidden;
+    height: 100vh;
+}
+
 #thankyou-main {
     position: fixed;
     top: 0;
@@ -1544,6 +1550,7 @@ footer a {
     padding: 2rem;
     z-index: 1000;
     margin: 0;
+    overflow: hidden;
 }
 
 /* Hide footer and back-to-top button on privacy page */
