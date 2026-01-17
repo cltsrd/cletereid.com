@@ -72,13 +72,10 @@ select:focus-visible,
 html {
     font-size: 18px;
     background-color: var(--color-black);
-    height: 100%;
-    min-height: 100vh;
 }
 
 body {
     min-height: 100vh;
-    height: 100%;
     background-image: var(--bg-body);
     background-repeat: repeat;
     background-position: top left;
