@@ -2065,8 +2065,13 @@ html.privacy-page {
 
     .milton-figure {
         max-width: 34rem;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
+    }
+    
+    .milton-image {
+        width: 100%;
     }
 
     .portfolio-alert {
