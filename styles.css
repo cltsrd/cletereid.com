@@ -2547,8 +2547,14 @@ html.privacy-page {
 
 .questions-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 2.5rem;
+}
+
+@media (min-width: 962px) {
+    .questions-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 .question-card {
